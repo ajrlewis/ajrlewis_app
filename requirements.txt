@@ -1,0 +1,13 @@
+Flask==2.3.0
+Werkzeug==2.3
+pymysql
+cryptography
+Flask-Login
+Flask-Mail
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-WTF
+html2text
+python-dotenv
+git+https://github.com/ajrlewis/flask_wallet_of_satoshi.git
+git+https://github.com/ajrlewis/bitcoinkit.git
