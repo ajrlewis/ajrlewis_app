@@ -13,7 +13,7 @@ init() {
 
 add_remotes(){
   git remote add gandi git+ssh://${GANDI_USER}@${GANDI_SERVER}/${GANDI_REPO}
-  git remote add github git@github.com:${GITHUB_USER}/${APP_NAME}_app.git
+  git remote add github git@github.com:${GITHUB_USER}/${GITHUB_REPO}.git
   echo "Git repository remotes added."
 }
 
