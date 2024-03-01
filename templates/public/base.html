@@ -1,47 +1,12 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config['APP_NAME'] }}</title>
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/logo.png') }}">
-    <meta name="apple-mobile-web-app-title" content="{{ config['APP_NAME'] }}">
- -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
-    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}"> -->
-  <!-- </head> -->
-  <!-- <body> -->
-    <!-- <header> -->
-    <!-- </header> -->
-
-    <!-- <nav> -->
-    <!-- </nav> -->
-
-
-    <!-- {% block content %} -->
-    <!-- {% endblock %} -->
-<!--  -->
-    <!-- <br> -->
-    <!-- <br> -->
-    <!-- <footer> -->
-    <!-- </footer> -->
-
-    <!-- <script> -->
-    <!-- </script> -->
-
-    <!-- {% block scripts %} -->
-    <!-- {% endblock %} -->
-
-  <!-- </body> -->
-<!-- </html> -->
-<!--  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJR Lewis - Tech Portfolio</title>
+    <title>A.J.R. Lewis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -57,6 +22,16 @@
             padding: 10px 0;
             animation: header-animation 2s infinite alternate;
         }
+        footer {
+            background-color: #3AAFA9;
+            color: #DEF2F1;
+            text-align: center;
+/*            position: fixed;*/
+            padding: 30px 0;
+/*            bottom: 0;*/
+            animation: footer-animation 2s infinite alternate;
+        }
+
         @keyframes header-animation {
             0% {
                 background-color: #2A7977;
@@ -65,15 +40,7 @@
                 background-color: #3AAFA9;
             }
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        p {
-            line-height: 1.6;
-        }
-        .project {
+        .card {
             background-color: #DEF2F1;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -90,16 +57,7 @@
                 border-color: #3AAFA9;
             }
         }
-        footer {
-            background-color: #3AAFA9;
-            color: #DEF2F1;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            animation: footer-animation 2s infinite alternate;
-        }
+
         @keyframes footer-animation {
             0% {
                 background-color: #3AAFA9;
@@ -112,7 +70,7 @@
             display: block;
             margin: 0 auto;
             max-width: 200px;
-            animation: logo-animation 2s infinite alternate;
+/*            animation: logo-animation 2s infinite alternate;*/
         }
         @keyframes logo-animation {
             0% {
@@ -127,7 +85,7 @@
             margin: 20px auto;
             border-radius: 50%;
             max-width: 150px;
-            animation: profile-pic-animation 2s infinite alternate;
+/*            animation: profile-pic-animation 2s infinite alternate;*/
         }
         @keyframes profile-pic-animation {
             0% {
@@ -145,39 +103,39 @@
 </head>
 <body>
     <header>
-        <h1>A.J.R. Lewis</h1>
         <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo">
     </header>
     <div class="container">
         <img src="{{ url_for('static', filename='img/profile.png') }}" alt="Profile Picture" class="profile-pic">
         <div class="profile">
             <p>Astrophysicist turned Tech Entrepreneur with expertise in AI, web development, and full-stack solutions.</p>
-            <p>GitHub: <a href="https://github.com/ajrlewis">ajrlewis</a></p>
+            <p>GitHub: <a href="https://github.com/ajrlewis" target="_blank">ajrlewis</a></p>
             <p>Contact: <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></p>
-            <p>Nostr Account: ad1a216219eb17ef3f6cc28c288d86bd1d414ef1062475db716bb513ee8143a0</p>
-        </div>
-        <div class="project">
-            <h2>Education</h2>
-            <p>The University of Edinburgh - BSc in Astrophysics - Edinburgh, UK 2008 - 2014</p>
-            <p>The University of Edinburgh - PhD in Extragalactic Astrophysics - Edinburgh, UK 2014 - 2018</p>
-        </div>
-        <div class="project">
-            <h2>Experience</h2>
-            <p>Gigabyte London, UK - Web Development / Software Engineer - 2018 - 2019</p>
-            <p>Itim London, UK - Head of AI - 2019 - 2024</p>
-            <p>W4lkies London, UK - CTO & Occasional Dog Walker - 2023 - Present</p>
-        </div>
-        <div class="project">
-            <h2>Skills</h2>
-            <p>Programming Languages: Python, JavaScript, HTML, CSS, Bash, Rust</p>
-            <p>Web Development Frameworks: Flask, FastAPI, Vue JS</p>
-            <p>Database Frameworks: MySQL, MS SQL Server</p>
-            <p>Machine Learning Libraries: TensorFlow, scikit-learn</p>
-            <p>Version Control Systems: Git</p>
+            <p>Nostr: <a href="https://satellite.earth/@npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj">npub14...5q9etj</a></p>
         </div>
     </div>
+    <div class="container card">
+        <h2>Education</h2>
+        <p>The University of Edinburgh - BSc in Astrophysics - Edinburgh, UK 2008 - 2014</p>
+        <p>The University of Edinburgh - PhD in Extragalactic Astrophysics - Edinburgh, UK 2014 - 2018</p>
+    </div>
+    <div class="container card">
+        <h2>Experience</h2>
+        <p>Gigabyte - London, UK - Web Development - 2018 - 2019</p>
+        <p>Itim - London, UK - Head of AI - 2019 - 2024</p>
+        <p>W4lkies - London, UK - Tech Support & Occasional Dog Walker - 2023 - Present</p>
+        <p>Hyperhumans - Remote - LLM Tech Services & Consultation - 2024 - Present</p>
+    </div>
+    <div class="container card">
+        <h2>Skills</h2>
+        <p>Programming Languages: Python, JavaScript, HTML, CSS, Bash, Rust</p>
+        <p>Web Development Frameworks: Flask, FastAPI, Vue JS</p>
+        <p>Database Frameworks: MySQL, MS SQL Server</p>
+        <p>Machine Learning Libraries: TensorFlow, scikit-learn</p>
+        <p>Version Control Systems: Git</p>
+    </div>
     <footer>
-        &copy; 2022 AJR Lewis - All Rights Reserved
+        &copy; 2024 A.J.R. Lewis - All Rights Reserved
     </footer>
 </body>
 </html>
