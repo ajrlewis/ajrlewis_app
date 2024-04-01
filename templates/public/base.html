@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="A.J.R. Lewis, Tech Solutions Consultancy & Services, " />
+
+    <meta name="revisit-after" content="1 Weeks" />
+    <meta name="distribution" content="global" />
+
     <title>A.J.R. Lewis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/static/img/favicon.ico">
     <style>
+        a {
+/*            color: #001F3F;*/
+        }
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            text-align: center;
             background-color: #DEF2F1;
             color: #17252A;
         }
@@ -27,15 +39,6 @@
             text-align: center;
             padding: 30px 0;
         }
-
-        @keyframes header-animation {
-            0% {
-                background-color: #2A7977;
-            }
-            100% {
-                background-color: #3AAFA9;
-            }
-        }
         .card {
             width: 90%;
             background-color: #DEF2F1;
@@ -45,98 +48,108 @@
             margin-bottom: 20px;
             border: 2px solid #2A7977;
         }
-        @keyframes border-animation {
-            0% {
-                border-color: #2A7977;
-            }
-            100% {
-                border-color: #3AAFA9;
-            }
-        }
-
-        @keyframes footer-animation {
-            0% {
-                background-color: #3AAFA9;
-            }
-            100% {
-                background-color: #2A7977;
-            }
-        }
         .logo {
             display: block;
             margin: 0 auto;
             max-width: 200px;
-/*            animation: logo-animation 2s infinite alternate;*/
-        }
-        @keyframes logo-animation {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        .profile-pic {
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-            max-width: 150px;
-/*            animation: profile-pic-animation 2s infinite alternate;*/
-        }
-        @keyframes profile-pic-animation {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
         }
         .profile {
             text-align: center;
             margin-top: 20px;
         }
+        .profile img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+            max-width: 150px;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo">
+        <div class="row">
+            <div class="twelve columns">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Company Logo" class="logo">
+            </div>
+            <!-- <div class="ten columns"> -->
+                <!-- <nav> -->
+                    <!-- <ul> -->
+                        <!-- <li><a href="#">Home</a></li> -->
+                        <!-- <li><a href="#overview">Overview</a></li> -->
+                        <!-- <li><a href="#services">Services</a></li> -->
+                        <!-- <li><a href="#contact">Contact</a></li> -->
+                    <!-- </ul> -->
+                <!-- </nav> -->
+            <!-- </div> -->
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <i>Est. block 800,000</i>
+            </div>
+        </div>
     </header>
+
+    <div class="container profile" id="overview">
+            <p>Welcome to A.J.R. Lewis – Tech Solutions Consultancy & Services</p>
+            <img src="/static/img/profile.png" alt="Profile Picture" class="profile">
+            <p>As an Astrophysicist turned Tech Entrepreneur, I leverage my background in physics to provide innovative tech solutions and consulting services. With a knack for problem-solving and a track record of creating value for clients, I offer domain-driven design tailored to your specific needs.</p>
+            <p>Let's explore how we can chart the best way forward for your business using cutting-edge technology and strategic insights.</p>
+        <!-- <a href="#services">Scroll Down</a> -->
+    </div>
+    <br>
+    <br>
+
+<div style="background: #17252A; color: #DEF2F1" id="services">
+<br>
     <div class="container">
-        <img src="{{ url_for('static', filename='img/profile.png') }}" alt="Profile Picture" class="profile-pic">
-        <div class="profile">
-            <p>Astrophysicist turned Tech Entrepreneur with expertise in AI, web development, and full-stack solutions.</p>
-            <p>GitHub: <a href="https://github.com/ajrlewis" target="_blank">ajrlewis</a></p>
-            <p>Contact: <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></p>
-            <p>Nostr: <a href="https://satellite.earth/@npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj" target="_blank">npub14...5q9etj</a></p>
+        <h2>Services</h2>
+        <div class="row">
+            <!-- <div class="four columns" style="background: #DEF2F1; color: #17252A"> -->
+            <div class="four columns">
+                <h4>Tech Solutions Consulting</h4>
+                <p>Leverage my expertise in neural networks, large language models, and Rust for speed to receive tailored tech solutions that address your unique challenges. From clever API design to REST architecture, I offer consulting services to guide you towards the best way forward for your business.</p>
+                <p>From <b>₿0.00 200 000 per hour</b></p>
+                <hr>
+            </div>
+            <!-- <div class="four columns" style="background: #DEF2F1; color: #17252A"> -->
+            <div class="four columns">
+                <h4>Domain-Driven Design</h4>
+                <p>Benefit from domain-driven design principles to create software solutions that align closely with your business domain. By focusing on problem-solving within the context of your industry, we ensure that the technology solutions we provide are not only effective but also tailored to your specific needs.</p>
+                <p>From <b>₿0.02 000 000 per day</b></p>
+                <hr>
+            </div>
+            <!-- <div class="four columns" style="background: #DEF2F1; color: #17252A"> -->
+            <div class="four columns">
+                <h4>Custom Tech Services</h4>
+                <p>Whether you need assistance with Python for widely maintainable solutions, neural networks, or large language models, our custom tech services are designed to meet your requirements. Let us help you harness the power of technology to drive innovation and growth in your business.</p>
+                <p>From <b>₿0.02 000 000 per day</b></p>
+                <hr>
+            </div>
         </div>
     </div>
-    <div class="container card">
-        <h2>Education</h2>
-        <p>The University of Edinburgh - BSc in Astrophysics - Edinburgh, UK 2008 - 2014</p>
-        <p>The University of Edinburgh - PhD in Extragalactic Astrophysics - Edinburgh, UK 2014 - 2018</p>
-    </div>
-    <div class="container card">
-        <h2>Writing</h2>
-        <p>Ultra-Red Galaxies (2018), <a href="{{ url_for('static', filename='pdf/ultra_red_galaxies.pdf') }}" target="_blank">Download</a></p>
-        <p>From Seashells to Satoshis (Soon™), <a href="{{ url_for('static', filename='pdf/from_seashells_to_satoshis.pdf') }}" target="_blank">Download</a></p>
-    </div>
-    <div class="container card">
-        <h2>Experience</h2>
-        <p>Gigabyte - London, UK - Web Development - 2018 - 2019</p>
-        <p>Itim - London, UK - Head of AI - 2019 - 2024</p>
-        <p>W4lkies - London, UK - Tech Support & Occasional Dog Walker - 2023 - Present</p>
-        <p>A.J.R.Lewis - Remote - Tech Solutions Consultancy & Services - 2024 - Present</p>
-    </div>
-    <div class="container card">
-        <h2>Skills</h2>
-        <p>Programming Languages: Bash, CSS, HTML, JavaScript, Python, Rust</p>
-        <p>Web Development Frameworks: FastAPI, Flask, Vue JS</p>
-        <p>Database Frameworks: MS SQL Server, MySQL, PostgreSQL</p>
-        <p>Machine Learning Libraries: scikit-learn, TensorFlow</p>
-        <p>Version Control Systems: Git</p>
-    </div>
+    <!-- <a href="#">Back to Top</a>&nbsp;<a href="#contact">Scroll Down</a> -->
+<br>
+</div>
+<br>
+<br>
+
+        <div class="container" id="contact">
+            <h2>Get in Touch</h2>
+
+            <div class="row">
+                <div class="twelve columns">
+                    <a href="mailto:hello@ajrlewis.com">Contact us</a> to discover how we can add value to your business
+                </div>
+            </div>
+
+        </div>
+<br>
+<br>
+
     <footer>
         &copy; 2024 A.J.R. Lewis - All Rights Reserved
     </footer>
+
 </body>
 </html>
