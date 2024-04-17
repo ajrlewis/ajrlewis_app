@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  <nav>
+<div class="container">
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
+  </nav>
+{% endblock navbar %}
+
+{% block content %}
+  <div class="container profile" id="overview">
+<br>
+<h2>Tech Solutions & Consulting Services</h2>
+
+<p>At ajrlewis.com, we offer cutting-edge tech solutions and consulting services that leverage domain-driven design principles and innovative technologies to meet the specific needs of our clients. Operating on a Bitcoin standard, we have a proven track record of creating significant value through our tailored approach to problem-solving at the intersection of technology and business.</p>
+
+    <p>Our services include developing customized forecasting solutions, creating AI-driven insights, and building tools for lead generation with large language models.</p>
+    <p>Let's explore how we can chart the best way forward for your business using cutting-edge technology and strategic insights.</p>
+    <!-- <a href="#services">Scroll Down</a> -->
+    <br>
+    <a href="#services" style="font-size: 45px; text-decoration: none;">⌄</a>
+    <!-- <span style="font-size: 45px">⌄</span> -->
+  </div>
+  <br>
+  <br>
+  <div style="background: #17252A; color: #DEF2F1" id="services">
+    <br>
+    <br>
+    <div class="container">
+      <h2>Services</h2>
+      <div class="row">
+        <div class="four columns">
+          <h4>Tech Solutions Consulting</h4>
+          <p>Leverage my expertise in neural networks, large language models, and Rust for speed to receive tailored tech solutions that address your unique challenges. From clever API design to REST architecture, I offer consulting services to guide you towards the best way forward for your business.</p>
+          <p>From <b>₿0.00 084 000 per hour</b></p>
+          <hr>
+        </div>
+        <div class="four columns">
+          <h4>Domain-Driven Design</h4>
+          <p>Benefit from domain-driven design principles to create software solutions that align closely with your business domain. By focusing on problem-solving within the context of your industry, we ensure that the technology solutions we provide are not only effective but also tailored to your specific needs.</p>
+          <p>From <b>₿0.00 420 069 per day</b></p>
+          <hr>
+        </div>
+        <div class="four columns">
+          <h4>Custom Tech Services</h4>
+          <p>Whether you need assistance with Python for widely maintainable solutions, neural networks, or large language models, our custom tech services are designed to meet your requirements. Let us help you harness the power of technology to drive innovation and growth in your business.</p>
+          <p>From <b>₿0.00 420 069 per day</b></p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <a href="#overview" style="font-size: 45px; text-decoration: none;">⌃</a>
+    <a href="#team" style="font-size: 45px; text-decoration: none;">⌄</a>
+  <br>
+  <br>
+  </div>
+  <br>
+
+  <div style="background: #DEF2F1; color: #17252A" id="team">
+    <br>
+    <br>
+    <div class="container">
+      <h2>Team</h2>
+    <!-- <p>Welcome to A.J.R. Lewis – Tech Solutions Consultancy & Services</p> -->
+    <img src="/static/img/profile.png" alt="Profile Picture" class="profile" width="150px">
+    <p>
+      As the founder of ajrlewis.com, I bring a unique blend of expertise as an Astrophysicist turned Tech Entrepreneur. With a background in physics, I have successfully transitioned into the tech industry, combining my scientific knowledge with a deep understanding of technology to deliver innovative solutions. My experience as the Head of AI at itim in London, UK, and as a Web Development / Software Engineer at Gigabyte has equipped me with a diverse skill set in AI development, web development, and software engineering.
+    I have a passion for problem-solving and a keen eye for detail, which allows me to approach challenges with a fresh perspective and deliver high-quality solutions to my clients. Currently, I am focused on building tools that revolutionize the way businesses operate, with a particular emphasis on lead generation and market analysis using large language models. With proficiency in programming languages such as Rust, Python, and TypeScript, I am dedicated to pushing the boundaries of technology and driving success for my clients through innovative tech solutions.
+    </p>
+    </div>
+    <br>
+    <a href="#services" style="font-size: 45px; text-decoration: none;">⌃</a>
+    <a href="#contact" style="font-size: 45px; text-decoration: none;">⌄</a>
+<br>
+  </div>
+<br>
+<br>
+
+<div style="background: #17252A; color: #DEF2F1" id="services">
+  <br>
+  <div class="container" id="contact">
+    <h2>Get in Touch</h2>
+    <div class="row">
+      <div class="twelve columns">
+        <a href="mailto:hello@ajrlewis.com">Contact us</a> to discover how we can add value to your business
+      </div>
+    </div>
+    <!-- <br> -->
+    <!-- <a href="#">Back to Top</a> -->
+    <!-- <a href="#">Back to Top</a>&nbsp;<a href="#top">Scroll Down</a> -->
+    <br>
+    <a href="#team" style="font-size: 45px; text-decoration: none;">⌃</a>
+    <br>
+    <br>
+  </div>
+</div>
+
+{% endblock content %}
