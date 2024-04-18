@@ -14,7 +14,7 @@
 {% endblock navbar %}
 
 {% if client %}
-  {% set header = "Update a Client " %}
+  {% set header = "Update Client" %}
   {% set action = url_for('client_bp.update', client_id=client.id) %}
   {% set submit = "Update" %}
 {% else %}
@@ -63,7 +63,7 @@
 {% if clients %}
   <div class="container">
     <hr>
-    <h3>View Your Clients</h3>
+    <h3>Manage Existing Clients</h3>
     {% for client in clients %}
       <div>
         <br>
