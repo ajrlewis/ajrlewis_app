@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+<nav>
+  <div class="container">
+      <ul>
+        <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
+        <li><a href="{{ url_for('billing_bp.get') }}">Billing</a></li>
+      </ul>
+  </div>
+</nav>
+{% endblock navbar %}
+
+
+{% if client %}
+  {% set header = "Client " + client.id | string %}
+  {% set action = url_for('client_bp.update', client_id=client.id) %}
+  {% set submit = "Update" %}
+{% else %}
+  {% set header = "Clients" %}
+  {% set action = url_for('client_bp.add') %}
+  {% set submit = "Add" %}
+{% endif %}
+
+{% block content %}
+<br>
+
+<div class="container"> 
+  <h2>{{ header }}</h2>
+</div>
+
+<div class="container"> 
+  <hr>
+  <form action="{{ action }}" method="POST">
+    {{ client_form.csrf_token }}
+    <div class="row">
+      <div class="twelve columns">
+        {{ client_form.name.label() }}
+        {{ client_form.name(class_="u-full-width") }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        {{ client_form.domain.label() }}
+        {{ client_form.domain(class_="u-full-width") }}
+      </div>
+      <div class="six columns">
+        {{ client_form.email.label() }}
+        {{ client_form.email(class_="u-full-width") }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        {{ client_form.submit(value=submit, class_="u-half-width") }}
+      </div>
+      {% if client %}
+        <button onclick="window.location.href='{{ url_for('client_bp.get') }}'">Cancel</button>
+      {% endif %}
+    </div>
+  </form>
+</div>
+
+{% if clients %}
+  <div class="container">
+    <hr>
+    <h3>Client List</h3>
+    {% for client in clients %}
+      <div>
+        <br>
+        <h4>{{ client.id }}</h4>
+        <p><strong>Name:</strong> {{ client.name }}</p>
+        <p><strong>Domain:</strong> {{ client.domain }}</p>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Created At:</strong> {{ client.created_at }}</p>
+        <p><strong>Updated At:</strong> {{ client.updated_at }}</p>
+        <a href="{{ url_for('client_bp.get', client_id=client.id) }}" class="button">Edit</a>
+        <form
+          action="{{ url_for('client_bp.delete', client_id=client.id) }}"
+          method="POST"
+          onsubmit="return confirm('Are you sure you want to delete this client?');"
+        >
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+          <button type="submit">Delete</button>
+        </form>
+        <br>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<br>
+<br>
+
+{% endblock %}

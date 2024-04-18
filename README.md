@@ -21,6 +21,24 @@ Install with the following script:
 bash scripts/install.sh
 ```
 
+## Database
+
+Create a user password:
+
+```python
+import secrets
+from werkzeug.security import generate_password_hash, check_password_hash
+password = secrets.token_urlsafe(32)
+print(password)
+print(generate_password_hash(password))
+```
+
+And insert into the User table:
+
+```sql
+INSERT INTO user (email,password) VALUES ('john@doe.com','password');
+```
+
 ## Running the App
 
 Set the following `.env` variables:

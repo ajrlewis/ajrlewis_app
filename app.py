@@ -34,10 +34,14 @@ def create_app(Config) -> Flask:
     with app.app_context():
         from blueprints.index_bp import index_bp
         from blueprints.auth_bp import auth_bp
+        from blueprints.dashboard_bp import dashboard_bp
         from blueprints.billing_bp import billing_bp
+        from blueprints.client_bp import client_bp
 
         app.register_blueprint(index_bp, url_prefix="/")
         app.register_blueprint(auth_bp, url_prefix="/auth")
-        app.register_blueprint(billing_bp, url_prefix="/billing")
+        app.register_blueprint(dashboard_bp, url_prefix="/dashboard")
+        app.register_blueprint(billing_bp, url_prefix="/dashboard/billing")
+        app.register_blueprint(client_bp, url_prefix="/dashboard/clients")
 
         return app

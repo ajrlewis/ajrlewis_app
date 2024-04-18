@@ -4,9 +4,8 @@
 <nav>
   <div class="container">
       <ul>
-        <li><a href="#invoice">Clients</a></li>
-        <li><a href="#invoice">Billing</a></li>
-        <li><a href="#invoice">Billing_Invoice</a></li>
+        <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
+        <li><a href="{{ url_for('billing_bp.get') }}">Billing</a></li>
       </ul>
   </div>
 </nav>
@@ -65,7 +64,7 @@
     </div>
     <div class="row">
       <div class="twelve columns">
-        {{ invoice_form.submit(class_="u-full-width") }}
+        {{ invoice_form.submit(class_="u-half-width") }}
       </div>
     </div>
   </form>

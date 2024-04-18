@@ -4,8 +4,7 @@ from flask_login import login_required, login_user, logout_user, current_user
 from sqlalchemy import desc
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db, login_manager
-
-# from forms.sign_in_form import SignInForm
+from forms.login_form import LoginForm
 from models.user import User
 from utils.email_utils import send
 
@@ -20,41 +19,25 @@ auth_bp = Blueprint("auth_bp", __name__)
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
-    form = SignInForm()
+    login_form = LoginForm()
     if request.method == "GET":
-        return render_template("admin/auth.html", form=form)
+        return render_template("auth.html", login_form=login_form)
     elif request.method == "POST":
-        if form.validate_on_submit():
-            email = form.email.data
-            password = form.password.data
+        if login_form.validate_on_submit():
+            email = login_form.email.data
+            password = login_form.password.data
             user = User.query.filter_by(email=email).first()
             if not user or not check_password_hash(user.password, password):
                 flash("Please check your login details and try again.", "error")
-                return redirect(url_for("auth_bp.sign_in"))
-            now = datetime.now().strftime("%H:%M %Y-%m-%d")
-            user_agent = request.user_agent.string
-            ip_address = request.remote_addr
-            html = render_template(
-                "email/sign_in_notification.html",
-                user=user,
-                now=now,
-                user_agent=user_agent,
-                ip_address=ip_address,
-            )
-            send(
-                sender="hello@w4lkies.com",
-                recipient=email,
-                subject="⚠️🔒 Sign-in Notification ⚠️🔒",
-                html=html,
-            )
+                return redirect(url_for("auth_bp.login"))
             login_user(user, remember=True)
             next_page = request.form.get("next")
             if next_page:
                 return redirect(next_page)
             else:
-                return redirect(url_for("admin_bp.get"))
+                return redirect(url_for("client_bp.get"))
         flash("Please check your login details and try again.", "error")
-        return redirect(url_for("auth_bp.sign_in"))
+        return redirect(url_for("auth_bp.login"))
 
 
 @auth_bp.route("/logout", methods=["GET"])

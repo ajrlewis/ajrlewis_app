@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+<nav>
+  <div class="container">
+      <ul>
+        <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
+        <li><a href="{{ url_for('billing_bp.get') }}">Billing</a></li>
+      </ul>
+  </div>
+</nav>
+{% endblock navbar %}
+
+{% block content %}
+<br>
+<div class="container"> 
+  <h2>Dashboard</h2>
+</div>
+{% endblock %}

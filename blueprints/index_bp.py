@@ -15,7 +15,7 @@ def sitemap():
     lastmod = datetime.now() - timedelta(days=10)
     for rule in current_app.url_map.iter_rules():
         if "GET" in rule.methods:
-            exclude_urls = ["/admin/", "/static"]
+            exclude_urls = ["/dashboard", "/static"]
             url = rule.rule
             page = {"url": url, "lastmod": lastmod.strftime("%Y-%m-%d")}
             if not any(exclude_url in url for exclude_url in exclude_urls):
