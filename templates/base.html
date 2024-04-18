@@ -27,13 +27,16 @@
             color: #17252A;
         }
         header {
-            background-color: #2A7977;
+/*            background-color: #2A7977;*/
+            background-color: #3AAFA9;
             color: #DEF2F1;
             text-align: center;
             padding: 10px 0;
         }
         footer {
-            background-color: #3AAFA9;
+            background-color: #2A7977;
+
+/*            background-color: #3AAFA9;*/
             color: #DEF2F1;
             text-align: center;
             padding: 30px 0;
@@ -100,7 +103,7 @@
     <br>
     <div class="row">
       <div class="twelve columns">
-          <img src="/static/img/logo.png" alt="Company Logo" class="logo">
+          <a href="{{ url_for('index_bp.get') }}"><img src="/static/img/logo.png" alt="Company Logo" class="logo"></a>
       </div>
     </div>
     <br>
@@ -140,9 +143,9 @@
 
       <div class="row">
         <div class="four columns">
-            <h4> Contact</h4>
+            <h4>Contact</h4>
             <ul>
-                <li>hello@ajrlewis.com</li>
+                <li>E-mail: <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></li>
             </ul>
 
         </div> 
@@ -154,31 +157,13 @@
         <div class="four columns">
             <h4>Social</h4>
             <ul>
-                <li>Nostr</li>
-                <li>Github: <a href="https://github.com/ajrlewis">https://github.com/ajrlewis</a> </li>
+                <li>Nostr: <a href="">npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj</a></li>
+                <li>Github: <a href="https://github.com/ajrlewis" target="_blank">https://github.com/ajrlewis</a> </li>
             </ul>
     </div> 
 </div> 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
       <!-- <br> -->
       <!-- <br> -->
-      <!-- <br> -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
   </footer>
-<!--       <br>
-      <br>
-      <br>
-      <br>
-      <br> -->
-
 </body>
 </html>

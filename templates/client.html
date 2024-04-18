@@ -5,32 +5,32 @@
   <div class="container">
       <ul>
         <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
-        <li><a href="{{ url_for('billing_bp.get') }}">Billing</a></li>
+        <!-- <li><a href="{{ url_for('client_bp.get') }}">Services</a></li> -->
+        <li><a href="{{ url_for('billing_bp.get') }}">Invoices</a></li>
+        <li><a href="{{ url_for('auth_bp.logout') }}">Logout</a></li>
       </ul>
   </div>
 </nav>
 {% endblock navbar %}
 
-
 {% if client %}
-  {% set header = "Client " + client.id | string %}
+  {% set header = "Update a Client " %}
   {% set action = url_for('client_bp.update', client_id=client.id) %}
   {% set submit = "Update" %}
 {% else %}
-  {% set header = "Clients" %}
+  {% set header = "Add a Client" %}
   {% set action = url_for('client_bp.add') %}
   {% set submit = "Add" %}
 {% endif %}
 
 {% block content %}
 <br>
-
+<br>
 <div class="container"> 
   <h2>{{ header }}</h2>
 </div>
 
 <div class="container"> 
-  <hr>
   <form action="{{ action }}" method="POST">
     {{ client_form.csrf_token }}
     <div class="row">
@@ -63,17 +63,17 @@
 {% if clients %}
   <div class="container">
     <hr>
-    <h3>Client List</h3>
+    <h3>View Your Clients</h3>
     {% for client in clients %}
       <div>
         <br>
-        <h4>{{ client.id }}</h4>
+        <!-- <h4>{{ client.id }}</h4> -->
         <p><strong>Name:</strong> {{ client.name }}</p>
         <p><strong>Domain:</strong> {{ client.domain }}</p>
         <p><strong>Email:</strong> {{ client.email }}</p>
-        <p><strong>Created At:</strong> {{ client.created_at }}</p>
-        <p><strong>Updated At:</strong> {{ client.updated_at }}</p>
-        <a href="{{ url_for('client_bp.get', client_id=client.id) }}" class="button">Edit</a>
+        <!-- <p><strong>Created At:</strong> {{ client.created_at }}</p> -->
+        <!-- <p><strong>Updated At:</strong> {{ client.updated_at }}</p> -->
+        <a href="{{ url_for('client_bp.get', client_id=client.id) }}" class="button">Update</a>
         <form
           action="{{ url_for('client_bp.delete', client_id=client.id) }}"
           method="POST"

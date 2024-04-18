@@ -5,7 +5,8 @@
   <div class="container">
       <ul>
         <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
-        <li><a href="{{ url_for('billing_bp.get') }}">Billing</a></li>
+        <li><a href="{{ url_for('billing_bp.get') }}">Invoices</a></li>
+        <li><a href="{{ url_for('auth_bp.logout') }}">Logout</a></li>
       </ul>
   </div>
 </nav>
@@ -15,7 +16,7 @@
 {% block content %}
 <br>
 <div class="container" id="invoice"> 
-  <h2>Invoice</h2>
+  <h2>Invoices</h2>
   <form action="{{ url_for('billing_bp.invoice') }}" method="POST">
     {{ invoice_form.csrf_token }}
     <div class="row">

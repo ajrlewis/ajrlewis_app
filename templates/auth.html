@@ -15,15 +15,13 @@
     {{ login_form.csrf_token }}
     <input type="hidden" name="next" value="{{ request.args.get('next', '') }}"/>
     <div class="row">
-      <div class="twelve columns">
+      <div class="six columns">
         {{ login_form.email.label() }}
-        {{ login_form.email(class_="u-full-width") }}
+        {{ login_form.email(class_="u-half-width") }}
       </div>
-    </div>
-    <div class="row">
-      <div class="twelve columns">
+      <div class="six columns">
         {{ login_form.password.label() }}
-        {{ login_form.password(class_="u-full-width") }}
+        {{ login_form.password(class_="u-half-width") }}
       </div>
     </div>
     <div class="row">
