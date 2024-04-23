@@ -9,5 +9,7 @@ Flask-SQLAlchemy
 Flask-WTF
 html2text
 python-dotenv
+reportlab==4.2.0
 git+https://github.com/ajrlewis/flask_wallet_of_satoshi.git
 git+https://github.com/ajrlewis/bitcoinkit.git
+
