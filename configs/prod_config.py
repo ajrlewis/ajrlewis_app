@@ -20,7 +20,7 @@ class ProdConfig:
     MAIL_USE_SSL = ast.literal_eval(os.getenv("MAIL_USE_SSL"))
 
     REMEMBER_COOKIE_DURATION = datetime.timedelta(
-        seconds=int(os.getenv("REMEMBER_COOKIE_DURATION", 60))
+        seconds=int(os.getenv("REMEMBER_COOKIE_DURATION", 600))
     )
     PERMANENT_SESSION_LIFETIME = REMEMBER_COOKIE_DURATION
 

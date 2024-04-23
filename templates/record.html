@@ -1,0 +1,73 @@
+{% extends 'dashboard_base.html' %}
+
+{% set blueprint = model.lower() + "_bp" %}
+
+{% if record %}
+  {% set header = "Update " + model %}
+  {% set action = url_for(blueprint + ".update", id=record.id) %}
+  {% set submit = "Update" %}
+{% else %}
+  {% set header = "Add a " + model %}
+  {% set action = url_for(blueprint + ".add") %}
+  {% set submit = "Add" %}
+{% endif %}
+
+{% block content %}
+<br>
+<br>
+<div class="container"> 
+  <h2>{{ header }}</h2>
+</div>
+
+<div class="container"> 
+  <form action="{{ action }}" method="POST">
+    {{ form.csrf_token }}
+    {% for attribute in attributes %}
+      <div class="row">
+        <div class="twelve columns">
+          {{ form | attr(attribute) | attr("label") }}
+          {{ form | attr(attribute) }}
+        </div>
+      </div>
+    {% endfor %}
+    <div class="row">
+      <div class="twelve columns">
+        {{ form.submit(value=submit, class_="u-half-width") }}
+      </div>
+      {% if record %}
+        <button onclick="window.location.href='{{ url_for(blueprint + '.get') }}'">Cancel</button>
+      {% endif %}
+    </div>
+  </form>
+</div>
+
+{% if records %}
+  <div class="container">
+    <hr>
+    <h3>Manage Existing {{ model }}s</h3>
+    {% for record in records %}
+      <div>
+        <br>
+        {% for attribute in attributes %}
+          <p><strong>{{ attribute.capitalize() }}:</strong> {{ record | attr(attribute) }}</p>
+        {% endfor %}
+        <a href="{{ url_for(blueprint + '.get', id=record.id) }}" class="button">Update</a>
+        <form
+          action="{{ url_for(blueprint + '.delete', id=record.id) }}"
+          method="POST"
+          onsubmit="return confirm('Are you sure you want to delete?');"
+        >
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+          <button type="submit">Delete</button>
+        </form>
+        -
+        <br>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<br>
+<br>
+
+{% endblock %}

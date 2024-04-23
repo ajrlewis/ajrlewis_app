@@ -16,7 +16,7 @@ wos = WalletOfSatoshi()
 login_manager = LoginManager()
 login_manager.login_view = "auth_bp.login"
 login_manager.login_message_category = "error"
-login_manager.session_protection = "strong"
+# login_manager.session_protection = "strong"
 
 
 def create_app(Config) -> Flask:
@@ -35,13 +35,13 @@ def create_app(Config) -> Flask:
         from blueprints.index_bp import index_bp
         from blueprints.auth_bp import auth_bp
         from blueprints.dashboard_bp import dashboard_bp
-        from blueprints.billing_bp import billing_bp
+        from blueprints.invoice_bp import invoice_bp
         from blueprints.client_bp import client_bp
 
         app.register_blueprint(index_bp, url_prefix="/")
         app.register_blueprint(auth_bp, url_prefix="/auth")
         app.register_blueprint(dashboard_bp, url_prefix="/dashboard")
-        app.register_blueprint(billing_bp, url_prefix="/dashboard/billing")
+        app.register_blueprint(invoice_bp, url_prefix="/dashboard/invoice")
         app.register_blueprint(client_bp, url_prefix="/dashboard/clients")
 
         return app

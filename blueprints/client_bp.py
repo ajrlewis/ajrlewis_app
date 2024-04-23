@@ -9,22 +9,28 @@ client_bp = Blueprint("client_bp", __name__)
 
 
 @client_bp.route("/", methods=["GET"])
-@client_bp.route("/<int:client_id>", methods=["GET"])
+@client_bp.route("/<int:id>", methods=["GET"])
 @login_required
-def get(client_id: int = None):
+def get(id: int = None):
     client = None
     clients = None
     client_form = ClientForm()
-    if client_id is None:
+    if id is None:
         clients = Client.query.all()
     else:
-        client = Client.query.get(client_id)
+        client = Client.query.get(id)
         if client:
             client_form.set_data_from_model(client)
         else:
             flash(f"Booking not found.", "error")
+
     return render_template(
-        "client.html", client_form=client_form, client=client, clients=clients
+        "record.html",
+        model="Client",
+        attributes=["name", "domain", "email"],
+        form=client_form,
+        record=client,
+        records=clients,
     )
 
 
@@ -39,10 +45,10 @@ def add():
     return redirect(url_for("client_bp.get"))
 
 
-@client_bp.route("/update/<int:client_id>", methods=["POST", "PUT"])
+@client_bp.route("/update/<int:id>", methods=["POST", "PUT"])
 @login_required
-def update(client_id: int):
-    client = Client.query.get(client_id)
+def update(id: int):
+    client = Client.query.get(id)
     client_form = ClientForm()
     if client and client_form.validate_on_submit():
         user_data = {
@@ -56,10 +62,10 @@ def update(client_id: int):
     return redirect(url_for("client_bp.get"))
 
 
-@client_bp.route("/delete/<int:client_id>", methods=["POST", "DELETE"])
+@client_bp.route("/delete/<int:id>", methods=["POST", "DELETE"])
 @login_required
-def delete(client_id: int):
-    client = Client.query.get(client_id)
+def delete(id: int):
+    client = Client.query.get(id)
     if client:
         client.delete()
         flash(f"Client deleted successfully!", "success")
