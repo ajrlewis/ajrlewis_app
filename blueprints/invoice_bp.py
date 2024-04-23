@@ -98,10 +98,11 @@ def delete(id: int):
 
 
 @invoice_bp.route("/download/<int:id>", methods=["GET", "POST"])
-# @login_required
+@login_required
 def download(id: int):
     invoice = Invoice.query.get(id)
     if invoice:
+        print(f"{invoice = }")
         invoice_pdf = invoice_utils.create(invoice)
         print(f"{invoice_pdf = }")
         # download_name = f"invoice.pdf"
