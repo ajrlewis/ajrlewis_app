@@ -50,6 +50,9 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     push
   elif [[ "$1" == "deploy" ]]; then
     deploy
+  elif [[ "$1" == "push_and_deploy" ]]; then
+    push
+    deploy
   else
     echo "No command given!"
   fi
