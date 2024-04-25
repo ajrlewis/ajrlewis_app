@@ -15,7 +15,7 @@ from sqlalchemy import desc
 from forms.invoice_form import InvoiceForm
 from models.client import Client
 from models.invoice import Invoice
-from utils import invoice_utils
+from utils.invoice_pdf_util import create
 
 invoice_bp = Blueprint("invoice_bp", __name__)
 
@@ -54,6 +54,7 @@ def get(id: int = None):
         form=invoice_form,
         record=invoice,
         records=invoices,
+        downloadable=True,
     )
 
 
@@ -97,25 +98,25 @@ def delete(id: int):
     return redirect(url_for("invoice_bp.get"))
 
 
-@invoice_bp.route("/download/<int:id>", methods=["GET", "POST"])
+@invoice_bp.route("/download/<int:id>", methods=["GET"])
 @login_required
 def download(id: int):
     invoice = Invoice.query.get(id)
+    client = Client.query.get(invoice.client_id)
     if invoice:
-        print(f"{invoice = }")
-        invoice_pdf = invoice_utils.create(invoice)
-        print(f"{invoice_pdf = }")
-        # download_name = f"invoice.pdf"
-        # pdf_file = BytesIO()
-        # pdf_file.write(invoice_pdf)
-        # pdf_file.seek(0)
-        # flash(f"Invoice downloaded successfully!", "success")
-        # return send_file(
-        #     pdf_file,
-        #     as_attachment=True,
-        #     download_name=download_name,
-        #     mimetype="application/pdf",
-        # )
+        invoice.client_name = client.name
+        invoice_pdf = create(invoice)
+        download_name = f"{invoice.reference}.pdf"
+        pdf_file = BytesIO()
+        pdf_file.write(invoice_pdf)
+        pdf_file.seek(0)
+        flash(f"Invoice downloaded successfully!", "success")
+        return send_file(
+            pdf_file,
+            as_attachment=True,
+            download_name=download_name,
+            mimetype="application/pdf",
+        )
     else:
         flash("Invoice not found.", "error")
     return redirect(url_for("invoice_bp.get"))

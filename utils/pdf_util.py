@@ -1,4 +1,6 @@
+import os
 from io import BytesIO
+from PIL import Image
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
@@ -8,13 +10,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 def register_fonts():
     font_name_to_file = {
-        "CMUTypewriter-Light": "cmunbtl.ttf",
-        "CMUTypewriter-LightOblique": "cmunbto.ttf",
-        "CMUTypewriter-Regular": "cmuntt.ttf",
-        "CMUTypewriter-Italic": "cmunit.ttf",
-        "CMUTypewriter-Bold": "cmunrm.ttf",
-        "CMUTypewriter-Oblique": "cmunst.ttf",
-        "CMUTypewriter-BoldItalic": "cmuntx.ttf",
+        "CMUSerif-Roman": "cmunrm.ttf",
+        "CMUSerif-Italic": "cmunti.ttf",
+        "CMUSerif-Bold": "cmunbx.ttf",
     }
     for font_name, font_file in font_name_to_file.items():
         font = TTFont(font_name, f"static/fonts/cm-unicode-0.7.0/{font_file}")
@@ -26,83 +24,133 @@ register_fonts()
 
 class PDF:
     def __init__(self):
-        # The canvas should be thought of as a sheet of white paper with points on the sheet identified using Cartesian
-        # (X,Y) coordinates which by default have the (0,0) origin point at the lower left corner of the page.
-        # Furthermore the first coordinate x goes to the right and the second coordinate y goes up, by default.
-        # A simple example program that uses a can
-
         self._width, self._height = letter
 
-        self._x_margin = 0.05 * self._width
-        self._y_margin = 0.05 * self._height
+        self._x_margin = 0.1 * self._width
+        self._y_margin = 0.1 * self._height
 
-        self._x = self._x_margin
-        self._y = self._height - self._y_margin
+        self._max_width = self._width - 2 * self._x_margin
+        self._max_height = self._height - 2 * self._y_margin
 
-        self._buffer = BytesIO()
-        # self._canvas = canvas.Canvas(self._buffer, pagesize=letter)
-        self._canvas = canvas.Canvas("canvas.pdf", pagesize=letter)
+        self._x_middle = self._x_margin + ((self._width - (2 * self._x_margin)) / 2)
+        self._y_middle = self._y_margin - ((self._height - (2 * self._y_margin)) / 2)
 
+        self._origin = (self._x_margin, self._height - self._y_margin)
+        self._x, self._y = self._origin
+
+        self._font_size = 12
+        self._line_height = self._font_size * 1.5
+
+        self.the_page = 0
         self.the_section = 0
         self.the_subsection = 0
 
-    def within_bottom(self) -> bool:
-        return self._y + self._line_height > 0.0
+        self._buffer = BytesIO()
+        self._canvas = canvas.Canvas(self._buffer, pagesize=letter)
+        # self._canvas = canvas.Canvas("canvas.pdf", pagesize=letter)
 
-    def set_font(self, name: str = "CMUTypewriter-Regular", size: int = 12):
-        self._canvas.setFont(name, size)
+    def header(self):
+        image = Image.open("static/img/logo.png")
+        self.add_image(image, width=150, height=150)
+        self.line_break()
+
+    def footer(self):
+        self.italic_font()
+        self.the_page += 1
+        footer_text = f"Page {self.the_page}"
+        width = self._canvas.stringWidth(footer_text)
+        self._canvas.drawString(
+            self._x_middle - width / 2,
+            self._y_margin - 2 * self._line_height,
+            footer_text,
+        )
+
+    def set_font(self, name: str):
+        self._canvas.setFont(name, self._font_size)
+
+    def regular_font(self):
+        self.set_font("CMUSerif-Roman")
+
+    def italic_font(self):
+        self.set_font("CMUSerif-Italic")
+
+    def bold_font(self):
+        self.set_font("CMUSerif-Bold")
 
     def section(self, name: str):
+        if self._y - 5 * self._line_height < self._y_margin:
+            self.page_break()
         self.the_section += 1
         self.the_subsection = 0
-        self.set_font("CMUTypewriter-Bold", 12)
+        self._font_size *= 1.2
+        self.bold_font()
         self._canvas.drawString(self._x, self._y, f"{self.the_section}  {name}")
-        self.line_break(scale=2.2)
+        self._font_size /= 1.2
+        self.line_break()
+        self.line_break()
+        self.regular_font()
 
     def subsection(self, name: str):
+        if self._y - 5 * self._line_height < self._y_margin:
+            self.page_break()
         self.the_subsection += 1
-        self.set_font("CMUTypewriter-Bold", 12)
+        self.bold_font()
         self._canvas.drawString(
             self._x, self._y, f"{self.the_section}.{self.the_subsection}  {name}"
         )
-        self.line_break(scale=2.2)
+        self.line_break()
+        self.line_break()
+        self.regular_font()
 
-    def line_break(self, font_size: int = 12, scale: float = 1.2):
-        self._x = self._x_margin
-        self._y -= font_size * scale
+    def draw_text(self, text: str, align: str = "left"):
+        lines = []
+        words = text.split()
+        current_line = words[0]
+        for word in words[1:]:
+            width = self._canvas.stringWidth(current_line + " " + word)
+            if width < self._max_width:
+                current_line += " " + word
+            else:
+                lines.append(current_line)
+                current_line = word
+        lines.append(current_line)
+
+        for line in lines:
+            if self._y - self._line_height < self._y_margin:
+                self.page_break()
+            self._x, _ = self._origin
+            if align == "left":
+                pass
+            elif align == "center":
+                width = self._canvas.stringWidth(line)
+                self._x = self._x_middle - width / 2
+                pass
+            self._canvas.drawString(self._x, self._y, line)
+            self._y -= self._line_height
+
+    def add_image(self, image: Image.Image, width: int, height: int):
+        if self._y - height < self._y_margin:
+            self.page_break()
+        self._canvas.drawInlineImage(
+            image, self._x, self._y - height, width=width, height=height
+        )
+        self._y -= height
+
+    def line_break(self):
+        self._x, _ = self._origin
+        self._y -= self._line_height
 
     def page_break(self):
+        self.footer()
         self._canvas.showPage()
-        self._x = self._left_margin
-        self._y = self._height - self._top_margin
-        self._add_header()
+        self._x, self._y = self._origin
+        self.regular_font()
 
     def save(self):
+        self.footer()
         self._canvas.save()
 
     def to_bytes(self):
         pdf = self._buffer.getvalue()
         self._buffer.close()
         return pdf
-
-
-def create(title: str = ""):
-    pdf = PDF()
-    import os
-    import reportlab
-
-    pdf.section("Project Details")
-    pdf.subsection("Title")
-    pdf.save()
-
-    # return pdf.to_bytes()
-
-
-def main():
-    pdf = create()
-    # print(f"{pdf = }")
-    print(pdf)
-
-
-if __name__ == "__main__":
-    main()

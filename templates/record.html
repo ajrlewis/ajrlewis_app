@@ -7,7 +7,7 @@
   {% set action = url_for(blueprint + ".update", id=record.id) %}
   {% set submit = "Update" %}
 {% else %}
-  {% set header = "Add a " + model %}
+  {% set header = "Add " + model %}
   {% set action = url_for(blueprint + ".add") %}
   {% set submit = "Add" %}
 {% endif %}
@@ -44,14 +44,17 @@
 {% if records %}
   <div class="container">
     <hr>
-    <h3>Manage Existing {{ model }}s</h3>
+    <h3>Manage {{ model }}s</h3>
     {% for record in records %}
       <div>
         <br>
         {% for attribute in attributes %}
           <p><strong>{{ attribute.capitalize() }}:</strong> {{ record | attr(attribute) }}</p>
         {% endfor %}
-        <a href="{{ url_for(blueprint + '.get', id=record.id) }}" class="button">Update</a>
+        <a href="{{ url_for(blueprint + '.update', id=record.id) }}" class="button">Update</a>
+        {% if downloadable %}
+          <a href="{{ url_for(blueprint + '.download', id=record.id) }}" class="button">Download</a>
+        {% endif %}
         <form
           action="{{ url_for(blueprint + '.delete', id=record.id) }}"
           method="POST"
