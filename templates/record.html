@@ -49,9 +49,9 @@
       <div>
         <br>
         {% for attribute in attributes %}
-          <p><strong>{{ attribute.capitalize() }}:</strong> {{ record | attr(attribute) }}</p>
+          <p><strong>{{ attribute.replace("_", " ").title() }}:</strong> {{ record | attr(attribute) }}</p>
         {% endfor %}
-        <a href="{{ url_for(blueprint + '.update', id=record.id) }}" class="button">Update</a>
+        <a href="{{ url_for(blueprint + '.get', id=record.id) }}" class="button">Update</a>
         {% if downloadable %}
           <a href="{{ url_for(blueprint + '.download', id=record.id) }}" class="button">Download</a>
         {% endif %}

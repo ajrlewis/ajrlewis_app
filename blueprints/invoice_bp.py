@@ -33,6 +33,8 @@ def get(id: int = None):
     else:
         invoice = Invoice.query.get(id)
         if invoice:
+            client = Client.query.get(invoice.client_id)
+            invoice.client_name = client.name
             invoice_form.set_data_from_model(invoice)
         else:
             flash(f"Invoice not found.", "error")
@@ -102,8 +104,8 @@ def delete(id: int):
 @login_required
 def download(id: int):
     invoice = Invoice.query.get(id)
-    client = Client.query.get(invoice.client_id)
     if invoice:
+        client = Client.query.get(invoice.client_id)
         invoice.client_name = client.name
         invoice_pdf = create(invoice)
         download_name = f"{invoice.reference}.pdf"
