@@ -33,12 +33,10 @@ class InvoiceForm(FlaskForm, FormMixin):
         self.payment_address.data = self.payment_address.data.strip()
 
         if self.payment_address.data and self.date_issued.data:
-            # invoices = Invoice.query.filter_by(payment_address=self.payment_address.data)
-            self.reference.data = f"{self.payment_address.data[-8:].upper()}-{self.date_issued.data.strftime('%Y%m%d')}"
+            self.reference.data = f"AJRLEWIS-{self.payment_address.data[-8:].upper()}-{self.date_issued.data.strftime('%Y%m%d%H%M%S')}"
 
     def validate(self, extra_validators=None):
         initial_validation = super(InvoiceForm, self).validate(extra_validators)
-        print(f"{initial_validation = }")
         if not initial_validation:
             return False
 

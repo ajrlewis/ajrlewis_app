@@ -91,20 +91,22 @@ def create(invoice: Invoice):
     pdf.draw_text(invoice.technology)
     pdf.line_break()
 
-    pdf.subsection("Estimated Duration")
+    pdf.subsection("Duration")
     pdf.draw_text(invoice.estimated_duration)
     pdf.line_break()
 
-    pdf.subsection("Estimated Cost")
+    pdf.subsection("Cost")
     pdf.draw_text(invoice.estimated_cost)
     pdf.line_break()
 
     pdf.section("Success Criteria")
-    pdf.draw_text("All code functions in accordance to the details outlined above.")
+    pdf.draw_text(
+        "All code functions in accordance to the details outlined above. Bug fixes are solved when discovered."
+    )
     pdf.line_break()
 
-    pdf.section("Payment Address")
-    pdf.draw_text("All payments should be made to the following address:")
+    pdf.section("Payment")
+    pdf.draw_text("All payments should be made to the following on-chain address:")
     pdf.line_break()
     image = qrcodekit.get_image_with_data(invoice.payment_address)
     pdf._x = pdf._x_middle - 150 / 2
@@ -112,8 +114,20 @@ def create(invoice: Invoice):
     pdf.line_break()
     pdf.draw_text(invoice.payment_address, align="center")
 
+    # TODO (ajrl) Add lightning invoice URL here: i.e.,
+    # ajrlewis.com/pay?amount=<invoice.estimated_cost>&unit="btc"&memo=invoice.reference
     pdf.line_break()
     pdf.line_break()
+
+    # Payment on a Bitcoin standard is easy, native to the internet and quick.
+    # -> A unique on-chain payment address will be assigned to you.
+    # -> A lightning invoice for the quote invoice
+    # -> A payment for the exact amount to pay@ajrlewis.com
+    # pdf.draw_text(
+    #     "Alternatively, payments can be made to (1) a lightning invoice (generated here), or (2) the lightning address pay@ajrlewis.com."
+    # )
+    # pdf.line_break()
+    # pdf.line_break()
 
     pdf.section("Terms & Conditions")
 
@@ -130,13 +144,20 @@ Replication of client data or ideas without permission is strictly prohibited.
 
     pdf.subsection("Payment Terms")
     # "A.J.R. Lewis and the client agree to a 50% downpayment of the quoted amount at the start of their collaboration. The remainder will be paid at the time of delivery of the agreed work. Both parties agree that an on-chain transaction to the above address with 3 confirmations constitutes as payment received by A.J.R. Lewis. It is the responsibility of A.J.R. Lewis to ensure correct payment details are sent to the client."
+    #     pdf.draw_text(
+    #         """
+    # A.J.R. Lewis and the client agree to a 50% downpayment of the quoted amount at the start of their collaboration.
+    # The remainder will be paid at the time of delivery of the agreed work.
+    # Both parties agree that an on-chain transaction to the above address with 3 confirmations constitutes as payment received by A.J.R. Lewis.
+    # It is the responsibility of A.J.R. Lewis to ensure correct payment details are sent to the client.
+    #     """
+    #     )
     pdf.draw_text(
         """
-A.J.R. Lewis and the client agree to a 50% downpayment of the quoted amount at the start of their collaboration.
-The remainder will be paid at the time of delivery of the agreed work.
-Both parties agree that an on-chain transaction to the above address with 3 confirmations constitutes as payment received by A.J.R. Lewis.
+Full payment should be made by or on the first Sunday once this invoice is generated.
+Both parties agree that an on-chain transaction to the above address for at least the required amount with 3 confirmations constitutes as payment received by A.J.R. Lewis.
 It is the responsibility of A.J.R. Lewis to ensure correct payment details are sent to the client.
-    """
+        """
     )
     pdf.line_break()
 

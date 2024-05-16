@@ -84,7 +84,7 @@ class PDF:
         self.the_subsection = 0
         self._font_size *= 1.2
         self.bold_font()
-        self._canvas.drawString(self._x, self._y, f"{self.the_section}  {name}")
+        self._canvas.drawString(self._x, self._y, f"{self.the_section}  {name.strip()}")
         self._font_size /= 1.2
         self.line_break()
         self.line_break()
@@ -96,7 +96,9 @@ class PDF:
         self.the_subsection += 1
         self.bold_font()
         self._canvas.drawString(
-            self._x, self._y, f"{self.the_section}.{self.the_subsection}  {name}"
+            self._x,
+            self._y,
+            f"{self.the_section}.{self.the_subsection}  {name.strip()}",
         )
         self.line_break()
         self.line_break()
@@ -105,9 +107,9 @@ class PDF:
     def draw_text(self, text: str, align: str = "left"):
         lines = []
         words = text.split()
-        current_line = words[0]
+        current_line = words[0].strip()
         for word in words[1:]:
-            width = self._canvas.stringWidth(current_line + " " + word)
+            width = self._canvas.stringWidth(current_line + " " + word.strip())
             if width < self._max_width:
                 current_line += " " + word
             else:
