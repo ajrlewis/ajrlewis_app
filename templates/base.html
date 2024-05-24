@@ -53,7 +53,8 @@
         .logo {
             display: block;
             margin: 0 auto;
-            max-width: 200px;
+/*            max-width: 200px;*/
+            max-width: 300px;
         }
         .profile {
             text-align: center;
@@ -99,10 +100,12 @@
     </style>
 </head>
 <body>
-  <header>
+  <header style="background: white;">
+
     <br>
     <div class="row">
       <div class="twelve columns">
+          <!-- <a href="{{ url_for('index_bp.get') }}"><img src="/static/img/logo.png" alt="Company Logo" class="logo"></a> -->
           <a href="{{ url_for('index_bp.get') }}"><img src="/static/img/logo.png" alt="Company Logo" class="logo"></a>
       </div>
     </div>
@@ -116,7 +119,8 @@
   <!-- <br> -->
 
 {% block footer %}
-<footer>
+
+<footer style="background: #1F242D; color: white;">
     <div class="row">
         <div class="twelve columns">
             &copy; 2024 A.J.R. Lewis - All Rights Reserved
@@ -129,14 +133,14 @@
         <div class="six columns">
             <h4>Contact</h4>
             <ul>
-                <li>E-mail: <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></li>
+                <li>E-mail: <a href="mailto:hello@ajrlewis.com" style="color: #EE423C;">hello@ajrlewis.com</a></li>
             </ul>
         </div> 
         <div class="six columns">
             <h4>Social</h4>
             <ul>
                 <!-- <li>Nostr: <a href="https://primal.net/p/npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj", target="_blank">npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj</a></li> -->
-                <li>Github: <a href="https://github.com/ajrlewis" target="_blank">https://github.com/ajrlewis</a> </li>
+                <li>Github: <a href="https://github.com/ajrlewis" target="_blank" style="color: #EE423C;">https://github.com/ajrlewis</a> </li>
             </ul>
         </div> 
     </div> 
