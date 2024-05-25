@@ -3,6 +3,7 @@ from io import BytesIO
 from PIL import Image
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -51,6 +52,7 @@ class PDF:
 
     def header(self):
         image = Image.open("static/img/logo.png")
+        image = image.convert("RGBA")
         self.add_image(image, width=150, height=150)
         self.line_break()
 
@@ -133,8 +135,13 @@ class PDF:
     def add_image(self, image: Image.Image, width: int, height: int):
         if self._y - height < self._y_margin:
             self.page_break()
-        self._canvas.drawInlineImage(
-            image, self._x, self._y - height, width=width, height=height
+        self._canvas.drawImage(
+            ImageReader(image),
+            self._x,
+            self._y - height,
+            width=width,
+            height=height,
+            mask="auto",
         )
         self._y -= height
 
