@@ -18,29 +18,94 @@
         html {
           scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #DEF2F1;
-            color: #17252A;
+            background:#1F242C;
         }
+
         header {
-/*            background-color: #2A7977;*/
-            background-color: #3AAFA9;
-            color: #DEF2F1;
+            background: white;
+            color: #1F242C;
             text-align: center;
             padding: 10px 0;
         }
-        footer {
-            background-color: #2A7977;
 
-/*            background-color: #3AAFA9;*/
-            color: #DEF2F1;
-            text-align: center;
-            padding: 30px 0;
+        nav {
+            background: #1F242C;
+            color: white;
         }
+
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+
+        nav li {
+          float: left;
+        }
+
+        nav li a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+        }
+
+        nav li a:hover {
+        }
+
+        .overview {
+            background: #F2D9C2;
+            color:  #1F242C;
+        }
+
+        .services {
+           background: #F8F8F8;
+           color: #333333;
+        }
+
+        .team {
+           background: #EE423C;
+           color: #FFFFFF;
+        }
+
+        .clients {
+           background: #F2E2D9;
+           color: #1F242C;
+        }
+
+        .contact {
+           background: #70BFEF;
+           color: #FFFFFF;
+        }
+
+        footer {
+            background: #1F242C;
+            color: white;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            color: #1F242C;
+        }
+
+
+        nav a, footer a {
+            color: white;
+        }
+
+        nav a:hover, footer a:hover {
+            color: #CCCCCC;
+        }
+
         .card {
             width: 90%;
             background-color: #DEF2F1;
@@ -50,78 +115,45 @@
             margin-bottom: 20px;
             border: 2px solid #2A7977;
         }
+        
         .logo {
             display: block;
             margin: 0 auto;
-/*            max-width: 200px;*/
             max-width: 300px;
         }
+        
         .profile {
             text-align: center;
             margin-top: 20px;
         }
+        
         .profile img {
             display: block;
             margin: 20px auto;
             border-radius: 50%;
             max-width: 150px;
         }
-
-            nav {
-              background-color: #17252A;
-            }
-
-            nav ul {
-              list-style-type: none;
-              margin: 0;
-              padding: 0;
-              overflow: hidden;
-            }
-
-            nav li {
-              float: left;
-            }
-
-            nav li a {
-              display: block;
-              color: #DEF2F1;
-              text-align: center;
-              padding: 14px 16px;
-              text-decoration: none;
-            }
-
-            nav li a:hover {
-              color: #17252A;
-              background-color: #DEF2F1;
-/*              color: #DEF2F1;*/
-/*              background-color: #2A7977;*/
-            }
-
     </style>
 </head>
 <body>
-  <header style="background: white;">
-  <!-- <header style="background: #1F242D; color: white;"> -->
-
+  <header>
     <br>
     <div class="row">
       <div class="twelve columns">
-          <!-- <a href="{{ url_for('index_bp.get') }}"><img src="/static/img/logo.png" alt="Company Logo" class="logo"></a> -->
           <a href="{{ url_for('index_bp.get') }}"><img src="/static/img/logo.png" alt="Company Logo" class="logo"></a>
       </div>
     </div>
     <br>
     <br>
   </header>
-    {% block navbar %}{% endblock navbar %}
+  {% block navbar %}{% endblock navbar %}
   <content>
-      {% block content %}{% endblock content %}
+    {% block content %}{% endblock content %}
   </content>
-  <!-- <br> -->
 
 {% block footer %}
-
-<footer style="background: #1F242D; color: white;">
+<footer>
+    <br>
     <div class="row">
         <div class="twelve columns">
             &copy; 2024 A.J.R. Lewis - All Rights Reserved
@@ -129,19 +161,18 @@
             <br>
         </div> 
     </div> 
-
-      <div class="row">
+    <div class="row">
         <div class="six columns">
             <h4>Contact</h4>
             <ul>
-                <li>E-mail: <a href="mailto:hello@ajrlewis.com" style="color: #EE423C;">hello@ajrlewis.com</a></li>
+                <li>E-mail: <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></li>
             </ul>
         </div> 
         <div class="six columns">
             <h4>Social</h4>
             <ul>
                 <!-- <li>Nostr: <a href="https://primal.net/p/npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj", target="_blank">npub145dzzcseavt770mvc2xz3rvxh5w5znh3qcj8tkm3dw638m5pgwsq5q9etj</a></li> -->
-                <li>Github: <a href="https://github.com/ajrlewis" target="_blank" style="color: #EE423C;">https://github.com/ajrlewis</a> </li>
+                <li>Github: <a href="https://github.com/ajrlewis" target="_blank">https://github.com/ajrlewis</a> </li>
             </ul>
         </div> 
     </div> 

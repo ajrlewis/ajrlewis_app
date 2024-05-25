@@ -1,143 +1,107 @@
 {% extends 'base.html' %}
 
 {% block navbar %}
-  <nav>
-<div class="container">
-    <ul>
-      <li><a href="#services" style="color: #EE423C; text-decoration: underline;">Services</a></li>
-      <li><a href="#team" style="color: #EE423C; text-decoration: underline;">Team</a></li>
-      <li><a href="#clients" style="color: #EE423C; text-decoration: underline;">Clients</a></li>
-      <li><a href="#contact" style="color: #EE423C; text-decoration: underline;">Contact</a></li>
-    </ul>
-</div>
-  </nav>
+<nav>
+  <div class="container">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+  </div>
+</nav>
 {% endblock navbar %}
 
 {% block content %}
-<div  style="background: #1F242D; color: white;">
-<!-- <div  style="background: white;"> -->
-<!-- <div  style="background: #EE423C;"> -->
-<!-- <div  style="background: #EE423C;"> -->
 
-  <!-- <div class="container profile" id="overview"> -->
+<div class="overview">
   <div class="container" id="overview">
-<br>
-<h2>Tech Solutions & Consulting Services</h2>
-
-<p>We offer cutting-edge tech solutions and consulting services that leverage domain-driven design principles and innovative technologies to meet our clients' specific needs.</p>
-
-<p>Operating on a Bitcoin standard, we have a proven track record of creating significant value through our tailored approach to problem-solving at the intersection of technology and business.</p>
-
-    <p>Our services include developing customized forecasting solutions, creating AI-driven insights, and building tools for lead generation with large language models.</p>
+    <br>
+    <h2>Tech Solutions & Consulting Services</h2>
+    <p>We offer cutting-edge tech solutions and consulting services that leverage domain-driven design principles and innovative technologies to meet our clients' specific needs.</p>
+    <p>Operating on a Bitcoin standard, we have a proven track record of creating significant value through our tailored approach to problem-solving at the intersection of technology and business.</p>
+    <p>Our services include developing customized forecasting solutions, creating AI-driven insights, and building customized tools using large language models.</p>
     <p>Let's explore how we can chart the best way forward for your business using cutting-edge technology and strategic insights.</p>
     <br>
-    <!-- <a href="#services" style="text-decoration: none;"> -->
-    <a href="#services" style="color: #EE423C;">
-      Scroll to our services …
-    </a>
+    <a href="#services">Scroll to our services …</a>
     <br>
-      </div>
+  </div>
   <br>
   <br>
-    </div>
-  <div style="background: #1F242D; color: #DEF2F1" id="services">
-    <br>
-    <br>
-    <div class="container">
+</div>
+
+<div class="services">
+  <div class="container" id="services">
+      <br>
       <h2>Our Services</h2>
       <div class="row">
         <div class="four columns">
           <h4><span style="color: #C0C0C0">Silver Service</span></h4>
           <p>Leverage our expertise in neural networks, large language models, and Rust for speed to receive tailored tech solutions that address your unique challenges. From clever API design to REST architecture, we offer consulting services to guide you towards the best way forward for your business. Our detailed meeting minutes capture every aspect of our consultations, ensuring that you have a clear record of our discussions and recommendations.</p>
           <p>From <b>₿0.00 084 000 per hour</b></p>
-          <!-- <hr> -->
         </div>
         <div class="four columns">
           <h4><span style="color: gold;">Gold Service</span></h4>
           <p>With our Gold Service, we leverage domain-driven design principles to develop software solutions that are tailored to your specific business domain. By understanding the unique challenges and requirements of your industry, we create technology solutions that not only solve problems effectively but also align seamlessly with your business objectives.</p>
           <p>From <b>₿0.00 420 069 per day</b></p>
-          <!-- <hr> -->
         </div>
         <div class="four columns">
           <h4><span style="color: #f7931a;">Bitcoin Service</span></h4>
-          <p>
-            We offer cutting-edge AI/ML/Web REST API solutions that are ready for production. Our team of experts develops solutions in Python, TypeScript, or Rust, ensuring high performance and reliability. We provide CI infrastructure using leading database technologies such as MS SQL Server, MySQL, and PostgreSql, hosted on secure platforms like Gandi and Vercel.
-          </p>
+          <p>We offer cutting-edge AI/ML/Web REST API solutions that are ready for production. Our team of experts develops solutions in Python, TypeScript, or Rust, ensuring high performance and reliability. We provide CI infrastructure using leading database technologies such as MS SQL Server, MySQL, and PostgreSql, hosted on secure platforms like Gandi and Vercel.</p>
           <p>From <b>₿0.02 100 345 per week</b></p>
-          <!-- <hr> -->
         </div>
+    </div>
+    <br>
+    <a href="#team">Scroll to our team members …</a>
+  </div>
+  <br>
+  <br>
+</div>
+  
+<div class="team">
+  <div class="container" id="team">
+    <br>
+    <h2>The Team</h2>    
+    <div class="row">
+      <div class="six columns">
+        <img src="/static/img/profile.png" alt="Founder Profile Picture" class="profile" height="150px">
+        <br>
+        <b>Founder</b>
+        <p>As the founder of ajrlewis.com, I bring a unique blend of expertise as an Astrophysicist turned Tech Entrepreneur. With a PhD in extragalactic astrophysics and 4 years of experience as head of AI creating scalable demand forecasting solutions for large retail companies, I have successfully transitioned into the tech industry.</p>
+      </div>
+      <div class="six columns">
+        <img src="/static/img/bot.png" alt="Cheif Bot Officer Picture" class="profile" height="150px">
+        <br>
+        <b>Chief Bot Officer</b>
+        <p>As a fine-tuned AI LLM bot, I provide ajrlewis.com cutting-edge agents using state-of-the-art generative pre-trained transformer models. Powered by electricity, I'm always available to assist in any way that I can!</p>
       </div>
     </div>
-
-    <!-- <a href="#team" style="text-decoration: none;"> -->
-    <a href="#team" style="color: #EE423C;">
-      Scroll to our team members …
-    </a>
-  <br>
+    <br>
+    <a href="#clients">Scroll to our clients …</a>
   </div>
-  
-<!-- 
- -->
-<!-- <div  style="background: white;" id="team"> -->
-<div style="background: #1F242D; color: white;" id="team">
-<!-- <div style="width: 66%;"> -->
-<!-- </div> -->
-<!-- <div  style="background: #EE423C;" id="team"> -->
-  <!-- <div style="background: #3AAFA9; color: #17252A" id="team"> -->
-    <br>
-    <br>
-    <div class="container">
-      <h2>The Team</h2>    
-      <div class="row">
-        <div class="six columns">
-          <img src="/static/img/profile.png" alt="Profile Picture" class="profile" height="150px">
-          <br>
-          <b>Founder</b>
-          <p>
-As the founder of ajrlewis.com, I bring a unique blend of expertise as an Astrophysicist turned Tech Entrepreneur. With a PhD in extragalactic astrophysics and 4 years of experience as head of AI creating scalable demand forecasting solutions for large retail companies, I have successfully transitioned into the tech industry.
-          </p>
-        </div>
-        <div class="six columns">
-          <img src="/static/img/bot.png" alt="Profile Picture" class="profile" height="150px">
-          <br>
-          <b>Chief Bot Officer</b>
-          <p>
-As a fine-tuned AI LLM bot, I provide ajrlewis.com cutting-edge agents using state-of-the-art generative pre-trained transformer models. Powered by electricity, I'm always available to assist in any way that I can!
-          </p>
-        </div>
-      </div>
-    <br>
-    <!-- <a href="#clients" style="text-decoration: none;"> -->
-    <a href="#clients" style="color: #EE423C;">
-      Scroll to our clients …
-    </a>
-    <br>
-  </div>
-<br>
-<br>
-
-<div style="background: #1F242D; color: white" id="clients">
-<!-- <div style="background: #DEF2F1; color: #17252A" id="clients"> -->
   <br>
-  <div class="container">
+  <br>
+</div>
+
+<div class="clients">
+  <div class="container" id="clients">
+    <br>
     <h2>Our Clients</h2>
     <div class="row">
       <div class="twelve columns">
-        Despite client confidentiality being a priority at ajrlewis.com, a few of our long-term partners are happy to vouch for the quality of services that we provide.
+        A few of our long-term partners are happy to vouch for the quality of our services.
       </div>
     </div>
-        <br>
-
+    <br>
     <div class="row">
       <div class="six columns">
         <a href="https://hyperhumans.ai" target="_blank">
-          <img src="/static/img/client-hyperhumans.png" alt="W4lkies image" class="profile" height="150px">
+          <img src="/static/img/client-hyperhumans.png" alt="Hyperhumans Logo" class="profile" height="150px">
         </a>
         <br>
         <b>Hyperhumans</b>
-        <p>
-          ajrlewis.com played a pivotal role in elevating our solutions to new heights when we needed that extra push! Their swift turnaround time and top-notch code quality for both front-end and back-end development enabled us to efficiently deliver solutions to our clients within a demanding timeline.
-        </p>
+        <p>ajrlewis.com played a pivotal role in elevating our solutions to new heights when we needed that extra push! Their swift turnaround time and top-notch code quality for both front-end and back-end development enabled us to efficiently deliver solutions to our clients within a demanding timeline.</p>
         <br>
         <br>
       </div>
@@ -147,75 +111,32 @@ As a fine-tuned AI LLM bot, I provide ajrlewis.com cutting-edge agents using sta
         </a>
         <br>
         <b>W4lkies</b>
-        <p>
-          ajrlewis.com has been a lifesaver for my small West London dog walking business. Their services have saved me countless hours by streamlining the booking process, automating invoice generation, and providing valuable insights into my business data. Highly recommend!
-        </p>
+        <p>ajrlewis.com has been a lifesaver for my small West London dog walking business. Their services have saved me countless hours by streamlining the booking process, automating invoice generation, and providing valuable insights into my business data. Highly recommend!</p>
         <br>
         <br>
       </div>
     </div>
     <br>
-    <!-- <a href="#contact" style="text-decoration: none;"> -->
-    <a href="#contact" style="color: #EE423C;">
-      Scroll to our contact details …
-    </a>
-    <br>
-    <br>
-    <br>
+    <a href="#contact">Scroll to our contact details …</a>
   </div>
+  <br>
+  <br>
 </div>
 
-<div style="background: #1F242D; color: white;" id="contact">
-<!-- <div style="background: white; color: #1F242D" id="contact"> -->
-<!-- <div style="background: #17252A; color: #DEF2F1" id="contact"> -->
-  <br>
-  <div class="container">
+<div class="contact">
+  <div class="container" id="contact">
+    <br>
     <h2>Get in Touch</h2>
     <div class="row">
       <div class="twelve columns">
-        <a href="mailto:hello@ajrlewis.com" style="color: #EE423C;">Contact us</a> to discover how we can add value to your business!
+        <a href="mailto:hello@ajrlewis.com">Contact us</a> to discover how we can add value to your business!
       </div>
     </div>
-
-    <!-- <br> -->
-    <!-- <div class="row"> -->
-      <!-- <div class="twelve columns"> -->
-        <!-- Or use fill out this form with a brief description of what tech solutions or consulting services you're looking for: -->
-      <!-- </div>   -->
-    <!-- </div>   -->
-    <!-- <br> -->
-    <!-- <form action="{{ action }}" method="POST"> -->
-      <!-- email -->
-      <!-- <br> -->
-      <!-- <input type="email" name="email"> -->
-      <!-- <input  name="name"> -->
-      <!-- <br> -->
-      <!-- <br> -->
-      <!-- What you're after: -->
-      <!-- <br> -->
-      <!-- <input type="email" name="email"> -->
-    <!-- </form> -->
-  
     <br>
-    <br>
-    <br>
-
-    <!-- <a href="#" style="text-decoration: none;"> -->
-    <a href="#" style="color: #EE423C;">
-      Scroll back to the top …
-    </a>
-    <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
+    <a href="#" >Scroll back to the top …</a>
   </div>
-
   <br>
   <br>
-  <br>
-
 </div>
 
 {% endblock content %}
