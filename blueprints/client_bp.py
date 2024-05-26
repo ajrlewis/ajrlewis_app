@@ -27,10 +27,11 @@ def get(id: int = None):
     return render_template(
         "record.html",
         model="Client",
-        attributes=["name", "domain", "email"],
+        form_attributes=["name", "domain", "email"],
         form=client_form,
         record=client,
         records=clients,
+        record_attributes=["name", "domain", "email"],
     )
 
 

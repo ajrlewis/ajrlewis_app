@@ -42,7 +42,7 @@ class InvoicePDF(PDF):
         self.bold_font()
         self._x = self._x_margin + ((self._width - (2 * self._x_margin)) / 2)
         self._canvas.drawRightString(
-            self._width - self._x_margin, self._y, f"Reference:"
+            self._width - self._x_margin, self._y, f"Reference #:"
         )
         self.line_break()
         self.regular_font()

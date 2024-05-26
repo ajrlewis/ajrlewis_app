@@ -29,7 +29,10 @@ def get(id: int = None):
     invoice_form = InvoiceForm()
     if id is None:
         invoices = Invoice.query.all()
-        # Merge on client table with client.name
+        for invoice in invoices:
+            client = Client.query.get(invoice.client_id)
+            if client:
+                invoice.client_name = client.name
     else:
         invoice = Invoice.query.get(id)
         if invoice:
@@ -42,9 +45,9 @@ def get(id: int = None):
     return render_template(
         "record.html",
         model="Invoice",
-        attributes=[
+        form=invoice_form,
+        form_attributes=[
             "client_id",
-            # "client_name",
             "title",
             "summary",
             "technology",
@@ -53,9 +56,19 @@ def get(id: int = None):
             "payment_address",
             "date_issued",
         ],
-        form=invoice_form,
         record=invoice,
         records=invoices,
+        record_attributes=[
+            "client_name",
+            "title",
+            "summary",
+            "technology",
+            "estimated_duration",
+            "estimated_cost",
+            "payment_address",
+            "date_issued",
+            "reference",
+        ],
         downloadable=True,
     )
 
