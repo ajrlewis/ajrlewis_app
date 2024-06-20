@@ -16,130 +16,137 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/static/img/favicon.ico">
     <style>
+html {
+  animation: fadeIn 1s ease-in-out;
+  scroll-behavior: smooth;
+}
 
-        html {
-          scroll-behavior: smooth;
-        }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #1F242C;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background:#1F242C;
-        }
+header {
+  background: white;
+  color: #1F242C;
+  text-align: center;
+  padding: 10px 0;
+}
 
-        header {
-            background: white;
-            color: #1F242C;
-            text-align: center;
-            padding: 10px 0;
-        }
+nav {
+  background: #1F242C;
+  color: white;
+}
 
-        nav {
-            background: #1F242C;
-            color: white;
-        }
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-        nav ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-        }
+nav li {
+  float: left;
+}
 
-        nav li {
-          float: left;
-        }
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
 
-        nav li a {
-          display: block;
-          text-align: center;
-          padding: 14px 16px;
-        }
+nav li a:hover {
+}
 
-        nav li a:hover {
-        }
+.dashboard, .overview {
+  background: #F2D9C2;
+  color:  #1F242C;
+}
 
-        .dashboard, .overview {
-            background: #F2D9C2;
-            color:  #1F242C;
-        }
+.services {
+   background: #F8F8F8;
+   color: #333333;
+}
 
-        .services {
-           background: #F8F8F8;
-           color: #333333;
-        }
+.team {
+   background: #EE423C;
+   color: #FFFFFF;
+}
 
-        .team {
-           background: #EE423C;
-           color: #FFFFFF;
-        }
+.clients {
+   background: #F2E2D9;
+   color: #1F242C;
+}
 
-        .clients {
-           background: #F2E2D9;
-           color: #1F242C;
-        }
+.contact {
+   background: #70BFEF;
+   color: #FFFFFF;
+  min-height: 66vh;
+}
 
-        .contact {
-           background: #70BFEF;
-           color: #FFFFFF;
-            min-height: 66vh;
-        }
+footer {
+  background: #1F242C;
+  color: white;
+}
 
-        footer {
-            background: #1F242C;
-            color: white;
-        }
+.dashboard, .overview, .services, .team, .clients, .contact, footer {
+  min-height: 66vh;
+}
 
-        .dashboard, .overview, .services, .team, .clients, .contact, footer {
-            min-height: 66vh;
-        }
+a {
+  color: black;
+}
 
-        a {
-            color: black;
-        }
-
-        a:hover {
-            color: #1F242C;
-        }
+a:hover {
+  color: #1F242C;
+}
 
 
-        nav a, footer a {
-            color: white;
-        }
+nav a, footer a {
+  color: white;
+}
 
-        nav a:hover, footer a:hover {
-            color: #CCCCCC;
-        }
+nav a:hover, footer a:hover {
+  color: #CCCCCC;
+}
 
-        .card {
-            width: 90%;
-            background-color: #DEF2F1;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 2px solid #2A7977;
-        }
-        
-        .logo {
-            display: block;
-            margin: 0 auto;
-            max-width: 300px;
-        }
-        
-        /*.profile {
-        }
-        */
-        .profile {
-            text-align: center;
-            margin-top: 20px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-            max-width: 150px;
-        }
+.card {
+  width: 90%;
+  background-color: #DEF2F1;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #2A7977;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.profile {
+  text-align: center;
+  margin-top: 20px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  max-width: 150px;
+}
+
+@keyframes fadeIn {
+  from {
+  opacity: 0;
+  }
+  to {
+  opacity: 1;
+  }
+}
     </style>
 </head>
 <body>
