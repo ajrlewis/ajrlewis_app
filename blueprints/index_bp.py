@@ -6,7 +6,8 @@ index_bp = Blueprint("index_bp", __name__)
 
 @index_bp.route("/", methods=["GET"])
 def get():
-    return render_template("index.html"), 200
+    # return render_template("index.html"), 200
+    return render_template("index_parallax.html"), 200
 
 
 @index_bp.route("/sitemap.xml")
