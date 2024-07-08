@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,129 +39,43 @@
   <link rel="shortcut icon" href="/static/img/favicon.ico">
 
     <style>
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") 
+}
 html {
-  animation: fadeIn 0.75s ease-in-out;
-  animation: fadeIn 0.25s ease-in-out;
+  font-family: "Ubuntu", serif;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-/*  font-family: 'Montserrat', sans-serif;*/
-  margin: 0;
+  text-align: center;
+/*  margin: 0;
   padding: 0;
   text-align: center;
   background: #1F242C;
-}
+*/}
 
 body, html {
-    height: 100%;
-}
-
-header {
-  background: white;
-/*  background: transparent;*/
-/*  background-image: url("static/img/ajrlewis-logo-image-bot.png");*/
-  color: #1F242C;
-/*  color: white;*/
-  text-align: center;
-  padding: 10px 0;
-}
-
-nav {
+  font-family: "Ubuntu", serif;
   background: #1F242C;
-  color: white;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav li {
-  float: left;
-}
-
-nav li a {
-  display: block;
+  background-color: #111;
   text-align: center;
-  padding: 14px 16px;
-}
-
-nav li a:hover {
-}
-
-.dashboard, .overview {
-  background: #F2D9C2;
-  color:  #1F242C;
-}
-
-.services {
-   background: #F8F8F8;
-   color: #333333;
-}
-
-.team {
-   background: #EE423C;
-   color: #FFFFFF;
-}
-
-.clients {
-   background: #F2E2D9;
-   color: #1F242C;
-}
-
-.contact {
-   background: #70BFEF;
-   color: #FFFFFF;
-  min-height: 66vh;
+  height: 100%;
 }
 
 footer {
+  position: absolute;
+  width: 100%;
+  background: 0;
   background: #1F242C;
+  background-color: #111;
   color: white;
 }
 
-.dashboard, .overview, .services, .team, .clients, .contact, footer {
-  min-height: 66vh;
-}
-
-a {
-  color: black;
-}
-
-a:hover {
-  color: #1F242C;
-}
-
-
-nav a, footer a {
-  color: white;
-}
-
-nav a:hover, footer a:hover {
-  color: #CCCCCC;
-}
-
-.card {
-  width: 90%;
-  background-color: #DEF2F1;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 2px solid #2A7977;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.profile {
+.profile { }
+.profile img {
   text-align: center;
   margin-top: 20px;
   display: block;
@@ -183,11 +98,15 @@ nav a:hover, footer a:hover {
 body, html {
   height: 100%;
   margin: 0;
-  font: 400 15px/1.8 "Poppins", sans-serif;
+  font: "Ubuntu", sans-serif;
   color: #777;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+.background-image-1, 
+.background-image-2,
+.background-image-3,
+.background-image-4,
+.background-image-5 {
   position: relative;
   opacity: 0.65;
   background-attachment: fixed;
@@ -196,24 +115,31 @@ body, html {
   background-size: cover;
 }
 
-.bgimg-1 {
-  background-image: url("/static/img/background-9.png");
+.background-image-1 {
+  background-image: url("/static/img/background-bitcoin-1.png");
+  background-image: url("/static/img/background-bitcoin-5.png");
   min-height: 100%;
 }
 
-.bgimg-2 {
-  background-image: url("/static/img/background-5.png");
+.background-image-2 {
+  background-image: url("/static/img/background-bitcoin-2.png");
   min-height: 400px;
 }
 
-.bgimg-3 {
-  background-image: url("/static/img/background-8.png");
+.background-image-3 {
+  background-image: url("/static/img/background-bitcoin-3.png");
   min-height: 400px;
 }
 
-.bgimg-4 {
-  background-image: url("/static/img/background-8.png");
-  min-height: 400px;
+.background-image-4 {
+  background-image: url("/static/img/background-bitcoin-4.png");
+  min-height: 100%;
+}
+
+.background-image-5 {
+  background-image: url("/static/img/background-bitcoin-5.png");
+  background-image: url("/static/img/background-bitcoin-1.png");
+  min-height: 100%;
 }
 
 .caption {
@@ -226,6 +152,7 @@ body, html {
 }
 
 .caption span.border {
+  display: inline-block;
   background-color: #111;
   color: #fff;
   padding: 18px;
@@ -235,7 +162,7 @@ body, html {
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  .background-image-1, .background-image-2, .background-image-3, .background-image-4, .background-image-5 {
     background-attachment: scroll;
   }
 }
@@ -246,215 +173,163 @@ body, html {
 <body>
 
 <!-- title section -->
-<div class="bgimg-1">
+<div class="background-image-1">
   <div class="caption">
-  <span class="border">A.J.R. Lewis</span>
+    <span class="border">A.J.R. Lewis</span>
+    <span class="border">Building Tech Blocks Just for You</span>
   <br>
   <br>
   <br>
-  <span class="border">Crafting Tech Magic Just for You</span>
   </div>
 </div>
+  <br>
+  <br>
+  <br>
 
 <!-- overview section -->
-<div class="container" id="overview" style="text-align:center;">
+<div class="container">
   <br>
-
-  <h3>What do you do?</h3>
-  <p>We provide <i>value</i> for <i>value</i> (v4v) settled in <i>digital, sound</i> money (₿).</p>
-
-  <h3>Mmkay …  but what exactly do you do?</h3>
-  <p>Specifically, we offer bespoke tech consulting and/or solutions services to our clients. This ranges from a quick phone call to steer them in the right direction to optimize their specific business needs using the latest sought-after and maintainable open-source technologies, to actually building a fully fledged Application Programming Interface (API) for them to achieve their goals. As we transition through the Information Age, bespoke services like ours that utilize open source software are crucial to your future business security and prosperity.</p>
-
-  <h3>Cool, I'm interested! What are the next steps?</h3>
-  <p>Great! Our business offers a few off-the-shelf services that may meet your specific needs, which make use of our publicly available free and open source software (FOSS).
-<!-- build on top of latest ajrlewis=-api state you get the  -->
-<!-- when you start the latest open ai code with the founders recommendation to implement for yoursel!. -->
-    Take a look in these services below, or <a href="mailto:hello@ajrlewis.com">contact us</a> directly outlining your bespoke business needs!</p>
-  <h3>Why mention Bitcoin?</h3>
-  <!--  -->
-  <p>Bitcoin is a a peer-to-peer electronic cash system discovered by an anonymous cypher punk, Satoshi Nakamoto (the software for this protocol is maintained here: <a href="https://bitcoin.org">https://bitcoin.org</a>). At A.J.R. Lewis we believe in FOSS and operate on a Bitcoin standard as don't trust, verify.</p>
-  <p>With this thinking, it's a natural consequence for us to open source our entire software stack that our clients can utilize to the full potential
-    <!-- . opensource ensures -->
-  <!-- : security, independence -->
-  </p>
-  <br>
-  <!-- <a href="#services">Scroll to our services …</a> -->
-  <!-- <br> -->
-</div>
-
-<br>
-<br>
-
-
-<div class="bgimg-2">
-  <div class="caption">
-  <!-- <span class="border">AI Domain-driven Design</span> -->
-  <span class="border">Tech Tailored to You - From Ideas to Reality</span>
-
-  </div>
-</div>
-
-<div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: center;">
-
-<div class="services">
-  <div class="container" id="services">
-      <br>
-      <br>
-      <h2>Our Services</h2>
-      <br>
-      <p>At A.J.R. Lewis, we offer bespoke tech consulting and solutions services designed to meet your unique business needs. Whether you need a quick steer in the right direction or a fully-fledged API built from scratch, our team of experts is here to help. Explore our services below and discover how we can elevate your business with cutting-edge open-source technologies:</p>
-      <!-- <p>beloew are collection of off-the-self servcices taht we offer. make changes and/or get a bespoke service for your need!</p> -->
-      <br>
-      <div class="row">
-        <!-- <div class="four columns" style="background: #C0C0C0; padding: 10px; min-height: 66vh;"> -->
-        <div class="four columns" style="padding: 10px; min-height: 66vh;">
-          <br>
-          <!-- <h4>Tier I</h4> -->
-          <h3>Hour</h3>
-<p>Our briefest, quick-fire service where you'll talk directly to us regarding 
-We'll provide detailed minutes of our consultation
-and further suggestsion on how it's best for you to proceed.
-<a href="/static/pdf/ajrlewis-example-minutes.pdf">ajrlewis-example-minutes.pdf</a>
-If you're willing you can then opt to take things to the next stage and select a higher tier service to fulfill your needs! 
-</p>
-<!-- <p>Leverage our expertise in neural networks, large language models, and Rust for speed to receive tailored tech solutions that address your unique challenges. From clever API design to REST architecture, we offer consulting services to guide you towards the best way forward for your business. Our detailed meeting minutes capture every aspect of our consultations, ensuring that you have a clear record of our discussions and recommendations.</p> -->
-          <p>From <b>₿0.00 084 000 per hour</b></p>
-        </div>
-        <!-- <div class="four columns" style="background: #FFD700; padding: 10px; min-height: 66vh;"> -->
-        <div class="four columns" style=" padding: 10px; min-height: 66vh;">
-          <br>
-          <!-- <h4>Tier II</h4> -->
-          <h4>Day</h3>
-<p>All my sofware is open source .. this provides the benefits of open networks. What i'll do is take a snapshot of the current solutions i provide and give you a given version where subsequent modifications are proietry. Why you wouldn't just copy (which you are few to do) the sofatware is that you have oru exprtiste in assimillating my software into your own bespoke services. typpically this can more a day for our team to ahieve.</p>
-<!-- <p>With our Gold Service, we leverage domain-driven design principles to develop software solutions that are tailored to your specific business domain. By understanding the unique challenges and requirements of your industry, we create technology solutions that not only solve problems effectively but also align seamlessly with your business objectives.</p> -->
-          <p>From <b>₿0.00 420 069 per day</b></p>
-        </div>
-        <!-- <div class="four columns" style="background: #f7931a; padding: 10px; min-height: 66vh;"> -->
-        <div class="four columns" style=" padding: 10px; min-height: 66vh;">
-          <br>
-          <!-- <h4>Tier III</h4> -->
-          <h4>Week</h4>
-          <p>We offer cutting-edge AI/ML/Web REST API solutions that are ready for production. Our team of experts develops solutions in Python, TypeScript, or Rust, ensuring high performance and reliability. We provide CI infrastructure using leading database technologies such as MS SQL Server, MySQL, and PostgreSql, hosted on secure platforms like Gandi and Vercel.</p>
-          <p>From <b>₿0.02 100 345 per week</b></p>
-        </div>
-  <br>
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Overview</h1>
     </div>
-  <br>
-  <!-- <br> -->
-    <!-- <br> -->
-    <!-- <a href="#team">Scroll to our team members …</a> -->
-  <br>
-  
   </div>
-  <br>
+  <div class="row">
+    <div class="twelve columns">
+      <p>We provide bespoke tech-consulting and API-solution services using our open-source technologies operating on a bitcoin standard.</p>
+    </div>
+  </div>
   <br>
 </div>
 
+<br>
+<br>
+
+<div class="background-image-2">
+  <div class="caption">
+  <span class="border">Tech Tailored to You</span>
+  <span class="border">From Ideas to Reality</span>
   </div>
 </div>
 
-<div class="bgimg-3">
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Services</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="four columns">
+      <h2>Hourly</h2>
+      <p>Quick consultation service with detailed minutes and further suggestions</p>
+      <p><strong>From ₿0.00 084 000 / hour</strong></p>
+    </div>
+    <div class="four columns">
+      <h2>Daily</h2>
+      <p>Snapshot of our current API solutions with subsequent modifications</p>
+      <p><strong>From ₿0.00 420 069 / hour</strong></p>
+    </div>
+    <div class="four columns">
+      <h2>Weekly</h2>
+      <p>Cutting-edge AI/LLM/ML/Web REST API solutions ready for production</p>
+      <p><strong>From ₿0.02 100 345 / week</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <p>*Open-source software written in Python (FastAPI, Flask) or Rust (Actix Web) and deployed by Vercel or Gandi.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <p>*Get in touch today to discuss modfiications <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></p>
+    </div>
+  </div>
+
+  <br>
+</div>
+  <br>
+  <br>
+
+<div class="background-image-3">
   <div class="caption">
   <span class="border" style="font-size:25px;color: #f7f7f7;">Meet the Faces Behind Your Success Story</span>
   </div>
 </div>
 
-<div style="position: relative;">
-  <div class="container" id="team">
+<div class="container">
   <br>
-    <br>
-    <h2>The Team</h2>    
-    <div class="row">
-      <div class="six columns">
-        <img src="/static/img/profile.png" alt="Founder Profile Picture" class="profile">
-        <b>Alex Lewis</b>
-        <br>
-        <i>Founder</i>
-        <br>
-        <p>Having spent 4 years furthering our collective understanding of the role that distant sub-mm blobs in far-reaching corners of the Universe play in our Milky Way's evolution, and a further 4 years un-romatically substimituing galaxies/stars to otimizing demand forecasting using AI solutions for high-volume (>1M products daily) retail solutions, I ...I branched out to being my own boss offering v4v to like-mined clients.
-          I've finally found my pasion in optimizing code and solutions for bitcoin, the greeatest discovery in my lifetime.
-        </p>
-        <!-- <p>As the founder of ajrlewis.com, I bring a unique blend of expertise as an Astrophysicist turned Tech Entrepreneur. With a PhD in extragalactic astrophysics and 4 years of experience as head of AI creating scalable demand forecasting solutions for large retail companies, I have successfully transitioned into the tech industry.</p> -->
-      </div>
-      <div class="six columns">
-        <img src="/static/img/bot.png" alt="Cheif Bot Officer Picture" class="profile">
-        <b>Botrick AItman</b>
-        <br>
-        <i>Chief Bot Officer</i>
-        <br>
-        <p>
-          I'm the first port of call at api.ajrlewis.com/chat.
-          In fact I manage all calls to ajrlewis.ocm's api Large Languae Model (LLMs) reuqest. 
-        </p>
-      </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Team</h1>
     </div>
-    <br>
-    <!-- <a href="#clients">Scroll to our clients …</a> -->
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <img src="/static/img/profile-circle.png" alt="Founder Profile Picture">
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h2>Alex Lewis</h2>
+      <h3>Founder</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <p>PhD in extragalactic astrophysics</p>
+      <p>AI forecasting demand for high-volume retail businesses</p>
+    </div>
   </div>
   <br>
-  <br>
-
-  </div>
 </div>
 
-
-<div class="bgimg-3">
+<div class="background-image-4">
   <div class="caption">
-  <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span> -->
-  <!-- <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">Tech that Speaks Your Language - Let's Connect</span> -->
   <span class="border" style="font-size:25px;color: #f7f7f7;">Join Our Family of Thriving Businesses</span>
 </div>
 </div>
 
-<div style="position:relative;">
-<div class="clients">
-  <div class="container" id="clients">
-    <br>
-    <h2>Our Clients</h2>
-    <div class="row">
-      <div class="twelve columns">
-        A few of our long-term partners are happy to vouch for the quality of our services.
-      </div>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Clients</h1>
     </div>
-    <br>
-    <div class="row">
-      <div class="six columns">
-        <a href="https://hyperhumans.ai" target="_blank">
-          <img src="/static/img/client-hyperhumans.png" alt="Hyperhumans Logo" class="profile" height="150px">
-        </a>
-        <br>
-        <b>Hyperhumans</b>
-        <p>ajrlewis.com played a pivotal role in elevating our solutions to new heights when we needed that extra push! Their swift turnaround time and top-notch code quality for both front-end and back-end development enabled us to efficiently deliver solutions to our clients within a demanding timeline.</p>
-        <br>
-        <br>
-      </div>
-      <div class="six columns">
-        <a href="https://w4lkies.com" target="_blank">
-          <img src="/static/img/client-w4lkies.png" alt="W4lkies logo" class="profile" height="150px">
-        </a>
-        <br>
-        <b>W4lkies</b>
-        <p>ajrlewis.com has been a lifesaver for my small West London dog walking business. Their services have saved me countless hours by streamlining the booking process, automating invoice generation, and providing valuable insights into my business data. Highly recommend!</p>
-        <br>
-        <br>
-      </div>
-    </div>
-    <br>
-    <a href="#contact">Scroll to our contact details …</a>
   </div>
-  <br>
-  <br>
+
+  <div class="row">
+    <div class="six columns">
+      <a href="https://hyperhumans.ai" target="_blank">
+        <img src="/static/img/client-hyperhumans.png" alt="Hyperhumans Logo" style="max-width: 80%;">
+      </a>
+      <h2>Hyperhumans</h2>
+      <p></p>
+      <br>
+      <br>
+    </div>
+    <div class="six columns">
+      <a href="https://w4lkies.com" target="_blank">
+        <img src="/static/img/client-w4lkies.png" alt="W4lkies logo" style="max-width: 80%;">
+      </a>
+      <h2>W4lkies</h2>
+      <p>A.J.R. Lewis has effectively built the tech for my dog walking business and I couldn't have had such a slick, smooth and easy to use infrastructure to create invoices and booking system without their help! Very professional and work done in very good time. Highly recommend.</p>
+      <br>
+      <br>
+    </div>
+  </div>
 </div>
 
-</div>
-
-<div class="bgimg-1">
-  <div class="caption" style="background-color: white;">
-  <!-- <span class="border">COOL!</span> -->
-  <footer>
-    <!-- <br> -->
+<div class="background-image-5">
+  <div class="caption">
+    <span class="border">Get in touch to learn more!</span>
+  </div>
+  <footer style="bottom: 0;">
+    <br>
     <div class="row">
         <div class="twelve columns">
             &copy; 2024 A.J.R. Lewis - All Rights Reserved
@@ -477,10 +352,8 @@ If you're willing you can then opt to take things to the next stage and select a
             </ul>
         </div> 
     </div> 
-    <br>
 </footer>
-  </div>
-
+  <!-- </div> -->
 </div>
 
 </body>
