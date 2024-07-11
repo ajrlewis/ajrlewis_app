@@ -4,20 +4,18 @@
 <html lang="en">
 <head>
 
+  <!-- (render_meta) meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="Content-Language" content="en-us" />
-
   <link rel="canonical" href="https://ajrlewis.com/"/>
   <meta name="description" content="A.J.R. Lewis, Tech Consultancy & Solutions Services"/>
   <meta name="keywords" content="A.J.R. Lewis, Tech Consultancy & Solutions Services, AI, ML, Bitcoin" />
   <meta name="revisit-after" content="1 Weeks" />
   <meta name="distribution" content="global" />
-
   <meta property="article:modified_time" content="2024-07-01T05:35:40+00:00" />
-
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="A.J.R. Lewis | Tech Consultancy & Solutions Services"/>
   <meta property="og:description" content="A.J.R. Lewis provides "/>
@@ -28,150 +26,141 @@
   <meta property="og:url" content="https://ajrlewis.com/"/>
   <meta property="og:site_name" content="A.J.R. lewis"/>
   <meta property="og:type" content="website"/>
-
   <link rel="apple-touch-icon" href="/static/img/logo.png">
   <meta name="apple-mobile-web-app-title" content="A.J.R. Lewis">
-
   <title>A.J.R. Lewis</title>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="/static/img/favicon.ico">
 
+  <!-- (render_css) css -->
   <style>
 
-@font-face {
-    font-family: "Ubuntu";
-    src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") 
-}
+    @font-face {
+        font-family: "Ubuntu";
+        src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") 
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body, html {
-  font-family: "Ubuntu", sans-serif;
-  background-color: white
-  color: #111;
-  text-align: center;
-  height: 100%;
-  margin: 0;
-}
+    body, html {
+      font-family: "Ubuntu", sans-serif;
+      background-color: white
+      color: #111;
+      text-align: center;
+      height: 100%;
+      margin: 0;
+    }
 
-body p {
-  color: black;
-}
-
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: 0;
-/*  background: #1F242C;*/
-/*  background-color: #111;*/
-/*  color: white;*/
-  background-color: white;
-  color: #111;
-}
-
-.profile { }
-.profile img {
-  text-align: center;
-  margin-top: 20px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 50%;
-  height: 250px;
-  max-height: 250px;
-}
-
-@keyframes fadeIn {
-  from {
-  opacity: 0;
-  }
-  to {
-  opacity: 1;
-  }
-}
-    </style>
-
-<style>
-
-.background-overview,
-.background-services,
-.background-team,
-.background-clients,
-.background-contact {
-  position: relative;
-  opacity: 0.65;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.background-overview {
-  background-image: url("/static/img/background-overview.png");
-  min-height: 100%;
-}
-
-.background-services {
-  background-image: url("/static/img/background-services.png");
-  min-height: 400px;
-}
-
-.background-team {
-  background-image: url("/static/img/background-team.png");
-  min-height: 400px;
-}
-
-.background-clients {
-  background-image: url("/static/img/background-clients.png");
-  min-height: 100%;
-}
-
-.background-contact {
-  background-image: url("/static/img/background-contact.png");
-  min-height: 100%;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .background-overview,
-  .background-services,
-  .background-team,
-  .background-clients,
-  .background-contact {
-    background-attachment: scroll;
-  }
-}
+    body p {
+      color: black;
+    }
 
 
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-  color: white;
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      color: #111;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+    }
 
-}
+    .profile { }
 
-.caption span.border {
-  display: inline-block;
-  background-color: #111;
-  color: #fff;
-  color: white;
-  background: #1F242C;
-  background-color: black;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
+    .profile img {
+      text-align: center;
+      margin-top: 20px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 50%;
+      height: 250px;
+      max-height: 250px;
+    }
 
-</style>
+    /* for section in sections */
+    .background-overview,
+    .background-services,
+    .background-team,
+    .background-clients,
+    .background-contact {
+      position: relative;
+      opacity: 0.65;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .background-overview {
+      background-image: url("/static/img/background-overview.png");
+      min-height: 100%;
+    }
+    .background-services {
+      background-image: url("/static/img/background-services.png");
+      min-height: 400px;
+    }
+    .background-team {
+      background-image: url("/static/img/background-team.png");
+      min-height: 400px;
+    }
+    .background-clients {
+      background-image: url("/static/img/background-clients.png");
+      min-height: 100%;
+    }
+    .background-contact {
+      background-image: url("/static/img/background-contact.png");
+      min-height: 100%;
+    }
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1024px) {
+      .background-overview,
+      .background-services,
+      .background-team,
+      .background-clients,
+      .background-contact {
+        background-attachment: scroll;
+      }
+    }
+
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+      color: white;
+
+    }
+
+    .caption span.border {
+      display: inline-block;
+      background-color: #111;
+      color: #fff;
+      color: white;
+      background: #1F242C;
+      background-color: black;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+
+    /* Skeleton overrides */
+    .container {
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      min-height: 33vh;
+    }
+
+    .column {
+      min-height: 100%;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -179,11 +168,13 @@ footer {
 <!-- Overview -->
 <div class="background-overview">
   <div class="caption">
-    <span class="border">Building Tech Blocks</span>
+    <!-- <span class="border">A.J.R. Lewis</span> -->
+    <!-- <span class="border">Building Your Tech Foundation</span> -->
+    <span class="border">A.J.R. Lewis | Building Your Tech Foundation</span>
+    <!-- <span class="border">Building Your Tech Foundation</span> -->
   </div>
 </div>
 <div class="container">
-  <br>
   <div class="row">
     <div class="twelve columns">
       <h1>A.J.R. Lewis</h1>
@@ -196,7 +187,6 @@ footer {
       <!-- <p>our compnay operates on btc standard and as such all of our software is open source. what you pay through using us is our gespoke support in getting our open source stack working for you.</p> -->
     </div>
   </div>
-  <br>
 </div>
 
 <!-- Services -->
@@ -214,23 +204,24 @@ footer {
   <div class="row">
     <div class="four columns">
       <h2>Hourly</h2>
-      <p>Quick consultation service with detailed minutes and further suggestions</p>
+      <!-- <p>What to expect ...</p> -->
+      <p>Quick consultation service with detailed minutes and further suggestions.</p>
       <p><strong>From ₿0.00 084 000 / hour</strong></p>
     </div>
     <div class="four columns">
       <h2>Daily</h2>
-      <p>Snapshot of our current API solutions with subsequent modifications</p>
+      <p>Snapshot of our current API solutions with subsequent modifications.</p>
       <p><strong>From ₿0.00 420 069 / day</strong></p>
     </div>
     <div class="four columns">
       <h2>Weekly</h2>
-      <p>Cutting-edge AI/LLM/ML/Web REST API solutions ready for production</p>
+      <p>Cutting-edge AI/LLM/ML/Web REST API solutions ready for production.</p>
       <p><strong>From ₿0.02 100 345 / week</strong></p>
     </div>
   </div>
   <div class="row">
     <div class="twelve columns">
-      <p>Get in touch today to discuss which service would suit you best <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></p>
+      <p>Get in touch today to discuss which service would suit you best <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a>.</p>
     </div>
   </div>
 </div>
@@ -252,8 +243,8 @@ footer {
       <img src="/static/img/profile-circle.png" alt="Founder Profile Picture">
       <h2>Alex Lewis</h2>
       <h3>Founder</h3>
-      <p>PhD in extragalactic astrophysics</p>
-      <p>Head of AI team forecasting demand for high-volume retail businesses</p>
+      <p>PhD in extragalactic astrophysics.</p>
+      <p>Head of AI team forecasting demand for high-volume retail businesses.</p>
     </div>
     <div class="six columns profile">
         <img src="/static/img/bot.png" alt="Cheif Bot Officer Picture" class="profile">
@@ -262,9 +253,10 @@ footer {
         <br>
         <p>
           <!-- api.ajrlewis.com/chat -->
-          A fine-tuned 3B parameter T5 large language model
+          A large language model.
           <!-- 30 May 2023 — Flan-T5-Large and Flan-T5-XL (with 0.8B and 3B parameters respectively) perform similarly to other models with significantly more parameters, ... -->
         </p>
+        <!-- <p>With your permission able to save response data with external apis (open ai, claude ai)</p> -->
     </div>
   </div>
 </div>
@@ -314,9 +306,7 @@ footer {
   <footer>
     <div class="row">
         <div class="twelve columns">
-            &copy; 2024 A.J.R. Lewis - All Rights Reserved
-            <br>
-            <br>
+          <h3>&copy; 2024 A.J.R. Lewis - All Rights Reserved</h3>
         </div> 
     </div> 
     <div class="row">
