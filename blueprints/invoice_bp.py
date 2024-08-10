@@ -32,7 +32,9 @@ def get(invoice_id: int = None):
     invoices = None
     invoice_form = InvoiceForm()
     if invoice_id is None:
-        invoices = Invoice.query.all()
+        # invoices = Invoice.query.all()
+        invoices = Invoice.query.order_by(desc(Invoice.date_issued)).all()
+        # order by date_issued
         for _invoice in invoices:
             client = Client.query.get(_invoice.client_id)
             if client:
