@@ -10,6 +10,8 @@ Flask-WTF
 html2text
 python-dotenv
 reportlab==4.2.0
+loguru==0.7.2
+
 git+https://github.com/ajrlewis/flask_wallet_of_satoshi.git
 git+https://github.com/ajrlewis/bitcoinkit.git
 git+https://github.com/ajrlewis/qrcodekit.git

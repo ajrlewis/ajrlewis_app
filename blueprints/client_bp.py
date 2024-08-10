@@ -9,16 +9,16 @@ client_bp = Blueprint("client_bp", __name__)
 
 
 @client_bp.route("/", methods=["GET"])
-@client_bp.route("/<int:id>", methods=["GET"])
+@client_bp.route("/<int:client_id>", methods=["GET"])
 @login_required
-def get(id: int = None):
+def get(client_id: int = None):
     client = None
     clients = None
     client_form = ClientForm()
-    if id is None:
+    if client_id is None:
         clients = Client.query.all()
     else:
-        client = Client.query.get(id)
+        client = Client.query.get(client_id)
         if client:
             client_form.set_data_from_model(client)
         else:

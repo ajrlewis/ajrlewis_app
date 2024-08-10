@@ -1,6 +1,7 @@
 # Refactor to record_bp (Model, ModelForm)
 from io import BytesIO
 import datetime
+
 from flask import (
     Blueprint,
     flash,
@@ -11,7 +12,9 @@ from flask import (
     url_for,
 )
 from flask_login import current_user, login_required
+from loguru import logger
 from sqlalchemy import desc
+
 from forms.invoice_form import InvoiceForm
 from models.client import Client
 from models.invoice import Invoice
@@ -21,27 +24,28 @@ invoice_bp = Blueprint("invoice_bp", __name__)
 
 
 @invoice_bp.route("/", methods=["GET"])
-@invoice_bp.route("/<int:id>", methods=["GET"])
+@invoice_bp.route("/<int:invoice_id>", methods=["GET"])
 @login_required
-def get(id: int = None):
+def get(invoice_id: int = None):
+    logger.debug(f"{invoice_id = }")
     invoice = None
     invoices = None
     invoice_form = InvoiceForm()
-    if id is None:
+    if invoice_id is None:
         invoices = Invoice.query.all()
-        for invoice in invoices:
-            client = Client.query.get(invoice.client_id)
+        for _invoice in invoices:
+            client = Client.query.get(_invoice.client_id)
             if client:
-                invoice.client_name = client.name
+                _invoice.client_name = client.name
     else:
-        invoice = Invoice.query.get(id)
+        invoice = Invoice.query.get(invoice_id)
         if invoice:
             client = Client.query.get(invoice.client_id)
             invoice.client_name = client.name
             invoice_form.set_data_from_model(invoice)
         else:
             flash(f"Invoice not found.", "error")
-
+    logger.debug(f"{invoice = }")
     return render_template(
         "record.html",
         model="Invoice",
