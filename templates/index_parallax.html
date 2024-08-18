@@ -39,6 +39,8 @@
     @font-face {
         font-family: "Ubuntu";
         src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") 
+
+
     }
 
     html {
@@ -57,7 +59,6 @@
     body p {
       color: black;
     }
-
 
     footer {
       position: absolute;
@@ -88,30 +89,37 @@
     .background-clients,
     .background-contact {
       position: relative;
-      opacity: 0.65;
+/*      opacity: 0.65;*/
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
     .background-overview {
-      background-image: url("/static/img/background-overview.png");
+/*      background-image: url("/static/img/background-overview.png");*/
+      background-image: url("/static/img/background-overview-new.png");
       min-height: 100%;
     }
     .background-services {
-      background-image: url("/static/img/background-services.png");
+/*      background-image: url("/static/img/background-services.png");*/
+      background-image: url("/static/img/background-services-new.png");
       min-height: 400px;
     }
     .background-team {
-      background-image: url("/static/img/background-team.png");
+/*      background-image: url("/static/img/background-team.png");*/
+      background-image: url("/static/img/background-team-new.png");
       min-height: 400px;
     }
     .background-clients {
-      background-image: url("/static/img/background-clients.png");
+/*      background-image: url("/static/img/background-clients.png");*/
+/*      background-image: url("/static/img/background-clients-new.png");*/
+      background-image: url("/static/img/background-team-new.png");
       min-height: 100%;
     }
     .background-contact {
-      background-image: url("/static/img/background-contact.png");
+/*      background-image: url("/static/img/background-contact.png");*/
+/*      background-image: url("/static/img/background-contact-new.png");*/
+      background-image: url("/static/img/background-overview-new.png");
       min-height: 100%;
     }
 
@@ -156,13 +164,19 @@
       min-height: 33vh;
     }
 
-    .column {
+    .columns {
       min-height: 100%;
+      padding: 20px;
+/*      background-color: #00808020;*/
+border-style: solid;
+border-color: #00808020;
+border-color: #00000060;
+/*      border-radius: 5%;*/
     }
 
     .container h1 {
-      text-transform: uppercase;
-      color: grey;
+
+/*      text-transform: uppercase;*/
     }
 
 
@@ -174,21 +188,30 @@
 <!-- Overview -->
 <div class="background-overview">
   <div class="caption">
+    <!-- <span class="border">AJR Lewis | Building Your Tech</span> -->
+    <!-- <span class="border">AJR Lewis | Building Tech</span> -->
     <span class="border">AJR Lewis | Building Your Tech Foundation</span>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="twelve columns">
+    <!-- <div class="twelve columns"> -->
       <h1>Overview</h1>
-    </div>
+    <!-- </div> -->
   </div>
   <div class="row">
-    <div class="twelve columns">
-      <p>We provide bespoke building blocks for your digital API solutions.</p>
-      <p>We build your foundation on our open-source technologies allowing us to swiftly adapt to evolving security concerns and/or make improvements (<a href="https://api.ajrlewis.com/docs" target="_blank">https://api.ajrlewis.com/docs</a>).</p>
-      <p>We operate on a Bitcoin Standard. We prefer to accept bitcoin as value for the value we provide.</p>
-    </div>
+    <!-- <div class="twelve columns"> -->
+      <h3>Who are you?</h3>
+      <p>We are a group of independent software consultants and developers able to meet your business's bespoke digital needs!</p>
+      <h3>What do we do?</h3>
+      <p>From consulting to finding the best software solutions for your business, we can build your app, API and/or AI foundation using our free and open-source software (FOSS).</p>
+      <h3>What's your ethos?</h3>
+      <p>We build free and open-source software (FOSS), which allows us to swiftly adapt to evolving security concerns and/or make improvements.</p>
+      <p>We operate on a Bitcoin Standard and thus prefer to accept bitcoin as value for the value we provide.</p>
+      <p>We believe in simplicity.</p>
+      <!-- <h3>How can we monetize this?</h3> -->
+      <!-- <p>You can easily copy our open-source software as your foundation  ... or train your developers to embrace open-source technologies</p> -->
+    <!-- </div> -->
   </div>
 </div>
 
@@ -200,32 +223,39 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="twelve columns">
-      <h1>Services</h1>
-    </div>
+    <!-- <div class="twelve columns"> -->
+      <!-- <h1>Services</h1> -->
+      <h1>Our Services</h1>
+    <!-- </div> -->
   </div>
   <div class="row">
     <div class="four columns">
-      <h2>Hourly</h2>
-      <p>Expect quick consultation service with detailed minutes and further suggestions on improving your tech stack.</p>
-      <p><strong>From ₿0.00 084 000 / hour</strong></p>
+      <h2>Consultation</h2>
+      <p>Expect an hour online meeting where we learn everything about your business, strategy and priorities to map out your existing systems, tech & processes.</p>
+      <p>We will provide fully independent advice & recommendations via detailed minutes to improve your tech stack.</p>
+      <p><button>Book Now</button></p>
+      <p><strong>* Free with no obligation</strong></p>
     </div>
     <div class="four columns">
-      <h2>Daily</h2>
+      <h2>Hourly Rate</h2>
+      <p>We'll get your tech working for you on a relaxed </p>
+      <p><button>Book Now</button></p>
+      <p><strong>* From ₿0.00 084 000 / hour</strong></p>
+    </div>
+    <div class="four columns">
+      <h2>By the Day</h2>
       <p>Expect to implement a snapshot of our current API solutions with subsequent modifications.</p>
-      <p><strong>From ₿0.00 420 069 / day</strong></p>
-    </div>
-    <div class="four columns">
-      <h2>Weekly</h2>
       <p>Expect cutting-edge AI/LLM/ML/Web REST API solutions ready to use in production.</p>
-      <p><strong>From ₿0.02 100 345 / week</strong></p>
+      <p><button>Book Now</button></p>
+      <p><strong>* From ₿0.00 420 069 / day</strong></p>
     </div>
   </div>
-  <div class="row">
-    <div class="twelve columns">
-      <p><a href="mailto:hello@ajrlewis.com">Get in touch</a> today for free to discuss which service would suit you best.</p>
-    </div>
-  </div>
+  <br>
+  <!-- <div class="row"> -->
+    <!-- <div class="twelve columns"> -->
+      <!-- <p><a href="mailto:hello@ajrlewis.com">Get in touch</a> today for free to discuss which service would suit you best.</p> -->
+    <!-- </div> -->
+  <!-- </div> -->
 </div>
 
 <!-- Team -->
@@ -236,24 +266,24 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="twelve columns">
-      <h1>Team</h1>
-    </div>
+    <!-- <div class="twelve columns"> -->
+      <h1>Our Team</h1>
+    <!-- </div> -->
   </div>
   <div class="row">
     <div class="six columns profile">
       <img src="/static/img/profile-circle.png" alt="Founder Profile Picture">
       <h2>Alex Lewis</h2>
       <h3>Founder</h3>
-      <p>PhD in extragalactic astrophysics.</p>
-      <p>Head of AI team forecasting demand for high-volume retail businesses.</p>
+      <p>5 years PhD in extragalactic astrophysics.</p>
+      <p>4 years Head of AI team forecasting demand for high-volume retail businesses.</p>
+      <p>2 years developing .</p>
       <!-- <p>Author of "From Seashells to Satoshis".</p> -->
     </div>
     <div class="six columns profile">
-        <img src="/static/img/bot.png" alt="Cheif Bot Officer Picture" class="profile">
+        <img src="/static/img/bot.png" alt="Cheif Bot Officer Picture">
         <h2>Botrick AItman</h2>
         <h3>Chief Bot Officer</h3>
-        <br>
         <p>
           A large language model.
         </p>
@@ -276,9 +306,9 @@
 <div class="container" id="clients">
   <br>
   <div class="row">
-    <div class="twelve columns">
-      <h1>Clients</h1>
-    </div>
+    <!-- <div class="twelve columns"> -->
+      <h1>Our Clients</h1>
+    <!-- </div> -->
   </div>
   <div class="row">
     <div class="six columns profile">
@@ -288,8 +318,6 @@
       <h2>Hyperhumans</h2>
       <span style="font-size: xxx-large;">“</span>
       <p>We hired AJR Lewis based on a personal recommendation, and so far his work with us has been outstanding. Not only is he highly proficient in writing the actual code we need, but he has the brain to be able to make solid decisions and think up solutions that actually solve the problems that inevitably come up when developing software. Finally, he's just a great person to work with; self-managing, while fully able to mesh with our existing team. In short, hire him for your next software projects - we haven't regretted it for a second and neither will you.</p>
-      <br>
-      <br>
     </div>
     <div class="six columns profile">
       <a href="https://w4lkies.com" target="_blank">
@@ -298,8 +326,6 @@
       <h2>W4lkies</h2>
       <span style="font-size: xxx-large;">“</span>
       <p>AJR Lewis has effectively built the tech for my dog walking business and I couldn't have had such a slick, smooth and easy to use infrastructure to create invoices and booking system without their help! Very professional and work done in very good time. Highly recommend.</p>
-      <br>
-      <br>
     </div>
   </div>
 </div>
@@ -311,12 +337,13 @@
   </div>
 </div>
 <footer class="container">
-  <div class="row">
-      <div class="twelve columns">
-        <h3>&copy; 2024 AJR Lewis</h3>
-        <h6>All Rights Reserved</h6>
-      </div> 
-  </div> 
+  <!-- <div class="row"> -->
+      <!-- <div class="twelve columns"> -->
+        <!-- <h3>AJR Lewis</h3> -->
+        <!-- <h3>&copy; 2024 AJR Lewis</h3> -->
+        <!-- <h6>All Rights Reserved</h6> -->
+      <!-- </div>  -->
+  <!-- </div>  -->
   <div class="row">
       <div class="six columns">
           <h4>Contact</h4>
