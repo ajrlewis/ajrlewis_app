@@ -113,17 +113,21 @@ footer {
 
 /* Skeleton overrides */
 .container {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  min-height: 33vh;
+/*  padding-top: 5vh;*/
+/*  padding-bottom: 5vh;*/
+/*  min-height: 33vh;*/
 }
 
 .columns {
   min-height: 100%;
   padding: 20px;
-/*  border-style: solid;*/
-/*  border-color: #00000060;*/
 }
 
 .container h1 {
+}
+
+.bordered {
+  border-style: solid;
+  border-color: #00000060;
+
 }

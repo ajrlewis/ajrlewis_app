@@ -51,7 +51,7 @@ class PDF:
         # self._canvas = canvas.Canvas("canvas.pdf", pagesize=letter)
 
     def header(self):
-        image = Image.open("static/img/logo.png")
+        image = Image.open("static/img/logo-ajrlewis.png")
         image = image.convert("RGBA")
         self.add_image(image, width=150, height=150)
         self.line_break()

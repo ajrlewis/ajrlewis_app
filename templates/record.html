@@ -1,4 +1,4 @@
-{% extends 'dashboard_base.html' %}
+{% extends "dashboard_base.html" %}
 
 {% set blueprint = model.lower() + "_bp" %}
 
@@ -16,14 +16,9 @@
 
 
 {% block content %}
-<div class="dashboard">
-
-  <div class="container"> 
-    <br>
-    <h2>{{ header }}</h2>
-  </div>
-
-  <div class="container"> 
+  <div class="container">
+    <h1>{{ model }}s</h1>
+    <h3>{{ header }}</h3>
     <form action="{{ action }}" method="POST">
       {{ form.csrf_token }}
       {% for attribute in form_attributes %}
@@ -47,7 +42,6 @@
 
   {% if records %}
     <div class="container">
-      <hr>
       <h3>Manage {{ model }}s</h3>
       {% for record in records %}
         <div>
