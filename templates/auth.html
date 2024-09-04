@@ -4,36 +4,38 @@
 {% endblock navbar %}
 
 {% block content %}
-<div class="dashboard">
-  <div class="container">
-    <br>
-    <div class="row">
-      <div class="twelve columns">
-        <h2>Login</h2>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <form action="{{ url_for('auth_bp.login') }}" method="POST" >
-      {{ login_form.csrf_token }}
-      <input type="hidden" name="next" value="{{ request.args.get('next', '') }}"/>
-      <div class="row">
-        <div class="six columns">
-          {{ login_form.email.label() }}
-          {{ login_form.email(class_="u-half-width") }}
-        </div>
-        <div class="six columns">
-          {{ login_form.password.label() }}
-          {{ login_form.password(class_="u-half-width") }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="twelve columns">
-          <button type="submit">Login</button>
-        </div>
-      </div>
-    </form>
+<div class="overview">
+  <div class="caption">
+    <span class="border">Login</span>
   </div>
 </div>
-
+<!-- <div class="container">
+  <br>
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Login</h1>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <form action="{{ url_for('auth_bp.login') }}" method="POST" >
+    {{ login_form.csrf_token }}
+    <input type="hidden" name="next" value="{{ request.args.get('next', '') }}"/>
+    <div class="row">
+      <div class="six columns">
+        {{ login_form.email.label() }}
+        {{ login_form.email(class_="u-half-width") }}
+      </div>
+      <div class="six columns">
+        {{ login_form.password.label() }}
+        {{ login_form.password(class_="u-half-width") }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <button type="submit">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
 {% endblock %}

@@ -1,0 +1,129 @@
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  font-family: "Ubuntu", sans-serif;
+  background-color: white
+  color: #111;
+  text-align: center;
+  height: 100%;
+  margin: 0;
+}
+
+body p {
+  color: black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: #111;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.profile { }
+
+.profile img {
+  text-align: center;
+  margin-top: 20px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  height: 250px;
+  max-height: 250px;
+  max-height: 45vw;
+}
+
+/* for section in sections */
+.overview,
+.services,
+.team,
+.clients,
+.contact {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.overview {
+  background-image: url("/static/img/background-overview.png");
+  min-height: 100%;
+}
+.services {
+  background-image: url("/static/img/background-services.png");
+  min-height: 400px;
+}
+.team {
+  background-image: url("/static/img/background-team.png");
+  min-height: 400px;
+}
+.clients {
+  background-image: url("/static/img/background-team.png");
+  min-height: 100%;
+}
+.contact {
+  background-image: url("/static/img/background-overview.png");
+  min-height: 100%;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .overview,
+  .services,
+  .team,
+  .clients,
+  .contact {
+    background-attachment: scroll;
+  }
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  color: white;
+
+}
+
+.caption span.border {
+  display: inline-block;
+  background-color: #111;
+  color: #fff;
+  color: white;
+  background: #1F242C;
+  background-color: black;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+/* Skeleton overrides */
+.container {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  min-height: 33vh;
+}
+
+.columns {
+  min-height: 100%;
+  padding: 20px;
+/*  border-style: solid;*/
+/*  border-color: #00000060;*/
+}
+
+.container h1 {
+}

@@ -1,163 +1,156 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block navbar %}
-<nav>
-  <div class="container">
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-  </div>
-</nav>
-{% endblock navbar %}
+{% block header %}{% endblock header %}
+
+{% block nav %}{% endblock nav %}
 
 {% block content %}
-
+<!-- Overview -->
 <div class="overview">
-  <div class="container" id="overview">
-    <br>
-    <br>
-    <h2>Tech Consulting & Solutions Services</h2>
-    <br>
-<p><b>What do you do?</b> We provide <i>value</i> for <i>value</i> (v4v) settled in <i>sound</i> money (₿).</p>
-<p><b>Mmkay …  but what exactly do you do?</b> So, more specifically, we offer bespoke tech consulting and/or solutions services to our clients.
-This ranges from a quick phone call to point them in the right direction so that they can adopt the most appropriate tech solutions to optimize their specific business needs, to actually building a fully fledged Application Programming Interface (API) for them that maximizes their desired solutions using the latest sought-after and maintainable technologies.</p>
-<p><b>Cool, I'm interested! What are the next steps?</b> Good! We're likely your one-stop service provider in order for you to achieve your short- and long-term tech-related goals as we transition together through the Information Age revolution. Our business operates on a Bitcoin standard and offer a few generic services that may meet your needs. Take a look in the next section to find one that is appropriate to you, or <a href="mailto:hello@ajrlewis.com">contact us</a> directly outlining your specific/bespoke business needs!</p>
-    <!-- <p>We offer cutting-edge tech solutions and consulting services that leverage domain-driven design principles and innovative technologies to meet our clients' specific needs.</p> -->
-    <!-- <p>Operating on a Bitcoin standard, we have a proven track record of creating significant value-for-value through our tailored approach to problem-solving at the intersection of technology and business.</p> -->
-    <!-- <p>Our services include developing customized forecasting / data analysis solutions, creating AI-driven insights, and building customized tools using large language models.</p> -->
-    <!-- <p>Let's explore how we can chart the best way forward for your business using cutting-edge technology and strategic insights.</p> -->
-
-    <br>
-    <a href="#services">Scroll to our services …</a>
-    <br>
+  <div class="caption">
+    <span class="border">AJR Lewis | Building Your Tech Foundation</span>
   </div>
-  <br>
-  <br>
+</div>
+<div class="container">
+  <div class="row">
+    <h1>Overview</h1>
+  </div>
+  <div class="row">
+    <h3>Who are we?</h3>
+    <p>We are a group of independent software consultants and developers able to meet your business's bespoke digital needs!</p>
+    <h3>What do we do?</h3>
+    <p>From consulting to finding the best software solutions for your business, we can build your app, API and/or AI foundation using our free and open-source software (FOSS).
+    Our portfolio contains ...</p>
+    <h3>What's your ethos?</h3>
+    <p>We build free and open-source software (FOSS), which allows us to swiftly adapt to evolving security concerns and/or make improvements.</p>
+    <p>We operate on a Bitcoin Standard and thus prefer to accept bitcoin as value for the value we provide.</p>
+    <p>We believe in simplicity. Our ethos is simple. Our tech foundation is simple. Our </p>
+    <!-- <h3>How can we monetize this?</h3> -->
+    <!-- <p>You can easily copy our open-source software as your foundation  ... or train your developers to embrace open-source technologies</p> -->
+  <!-- </div> -->
+  </div>
 </div>
 
+<!-- Services -->
 <div class="services">
-  <div class="container" id="services">
-      <br>
-      <br>
-      <h2>Our Services</h2>
-      <br>
-      <div class="row">
-        <div class="four columns" style="background: #C0C0C0; padding: 10px;">
-          <br>
-          <h4>Silver Service</h4>
-          <p>Leverage our expertise in neural networks, large language models, and Rust for speed to receive tailored tech solutions that address your unique challenges. From clever API design to REST architecture, we offer consulting services to guide you towards the best way forward for your business. Our detailed meeting minutes capture every aspect of our consultations, ensuring that you have a clear record of our discussions and recommendations.</p>
-          <p>From <b>₿0.00 084 000 per hour</b></p>
-        </div>
-        <div class="four columns" style="background: #FFD700; padding: 10px;">
-          <br>
-          <h4>Gold Service</span></h4>          
-          <p>With our Gold Service, we leverage domain-driven design principles to develop software solutions that are tailored to your specific business domain. By understanding the unique challenges and requirements of your industry, we create technology solutions that not only solve problems effectively but also align seamlessly with your business objectives.</p>
-          <p>From <b>₿0.00 420 069 per day</b></p>
-        </div>
-        <div class="four columns" style="background: #f7931a; padding: 10px;">
-          <br>
-          <h4>Bitcoin Service</h4>
-          <p>We offer cutting-edge AI/ML/Web REST API solutions that are ready for production. Our team of experts develops solutions in Python, TypeScript, or Rust, ensuring high performance and reliability. We provide CI infrastructure using leading database technologies such as MS SQL Server, MySQL, and PostgreSql, hosted on secure platforms like Gandi and Vercel.</p>
-          <p>From <b>₿0.02 100 345 per week</b></p>
-        </div>
+  <div class="caption">
+    <span class="border">Tech Tailored to You</span>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h1>Our Services</h1>
+  </div>
+  <div class="row">
+    <div class="six columns">
+      <h2>Consultation</h2>
+      <p>Expect an hour online meeting where we learn everything about your business, strategy and priorities to map out your existing systems, tech & processes.</p>
+      <p>We will provide fully independent advice & recommendations via detailed minutes to improve your tech stack.</p>
+      <p><a class="button" href="mailto:hello@ajrlewis.com?subject=Book a Consulation&body=Hi, I'd like to book a consulation, please. When are you available?">Book Now</a></p>
+      <p><strong>* Free with no obligation</strong></p>
     </div>
-    <br>
-    <a href="#team">Scroll to our team members …</a>
+    <div class="six columns">
+      <h2>Daily Rate</h2>
+      <p>We'll get your tech working for you on a relaxed </p>
+      <p>Expect to implement a snapshot of our current API solutions with subsequent modifications.</p>
+      <p>Expect cutting-edge AI/LLM/ML/Web REST API solutions ready to use in production.</p>
+      <p><a class="button" href="mailto:hello@ajrlewis.com?subject=Book by the day&body=Hi, I'd like to book AJR Lewis for a project, please. When are you available to discuss this further?">Book Now</a></p>
+      <p><strong>* From ₿0.00 420 069 / day</strong></p>
+    </div>
   </div>
   <br>
-  <br>
 </div>
-  
+
+<!-- Team -->
 <div class="team">
-  <div class="container" id="team">
-    <br>
-    <h2>The Team</h2>    
-    <div class="row">
-      <div class="six columns">
-        <img src="/static/img/profile.png" alt="Founder Profile Picture" class="profile">
-        <b>Alex Lewis</b>
-        <br>
-        <i>Founder</i>
-        <br>
-        <p>Having spent 4 years furthering our collective understanding of the role that distant sub-mm blobs in far-reaching corners of the Universe play in our Milky Way's evolution, and a further 4 years un-romatically substimituing galaxies/stars to otimizing demand forecasting using AI solutions for high-volume (>1M products daily) retail solutions, I ...I branched out to being my own boss offering v4v to like-mined clients.
-          I've finally found my pasion in optimizing code and solutions for bitcoin, the greeatest discovery in my lifetime.
-        </p>
-        <!-- <p>As the founder of ajrlewis.com, I bring a unique blend of expertise as an Astrophysicist turned Tech Entrepreneur. With a PhD in extragalactic astrophysics and 4 years of experience as head of AI creating scalable demand forecasting solutions for large retail companies, I have successfully transitioned into the tech industry.</p> -->
-      </div>
-      <div class="six columns">
-        <img src="/static/img/bot.png" alt="Cheif Bot Officer Picture" class="profile">
-        <b>Botrick AItman</b>
-        <br>
-        <i>Chief Bot Officer</i>
-        <br>
-        <p>I'm a fine-tuned AI LLM bot residing at `api.ajrlewis.com/chat`. I provide ajrlewis.com cutting-edge insights using state-of-the-art generative pre-trained transformer models. I'm powered by electricity and always available to assist in any way that we can!
-          toggling betweem 7B goodgle models and (not-so) open-AI's GPT, I'm a studrdy solution/side-kick to ajrlewis on the api/chat endpoint.
-        </p>
-      </div>
-    </div>
-    <br>
-    <a href="#clients">Scroll to our clients …</a>
+  <div class="caption">
+    <span class="border">Meet the Faces Behind Your Success Story</span>
   </div>
-  <br>
-  <br>
+</div>
+<div class="container">
+  <div class="row">
+    <h1>Our Team</h1>
+  </div>
+  <div class="row">
+    <div class="six columns profile">
+      <img src="/static/img/profile-ajrlewis.png" alt="Founder Profile Picture">
+      <h2>Alex Lewis</h2>
+      <h3>Founder</h3>
+      <p>PhD in extragalactic astrophysics (4 years).</p>
+      <p>Head of AI team forecasting demand for high-volume retail businesses (4 years).</p>
+      <p>Building this tech consulting and solutions business (2 years).</p>
+    </div>
+    <div class="six columns profile">
+      <img src="/static/img/profile-bot.png" alt="Cheif Bot Officer Picture">
+      <h2>Botrick AItman</h2>
+      <h3>Chief Bot Officer</h3>
+      <p>
+        A large language model.
+      </p>
+      <p>
+        Control over many >60B-parameter-trained models.
+      </p>
+      <p>
+        WIth your API-usage consent I can fine tune.
+      </p>
+    </div>
+  </div>
 </div>
 
+<!-- Clients -->
 <div class="clients">
-  <div class="container" id="clients">
-    <br>
-    <h2>Our Clients</h2>
-    <div class="row">
-      <div class="twelve columns">
-        A few of our long-term partners are happy to vouch for the quality of our services.
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="six columns">
-        <a href="https://hyperhumans.ai" target="_blank">
-          <img src="/static/img/client-hyperhumans.png" alt="Hyperhumans Logo" class="profile" height="150px">
-        </a>
-        <br>
-        <b>Hyperhumans</b>
-        <p>ajrlewis.com played a pivotal role in elevating our solutions to new heights when we needed that extra push! Their swift turnaround time and top-notch code quality for both front-end and back-end development enabled us to efficiently deliver solutions to our clients within a demanding timeline.</p>
-        <br>
-        <br>
-      </div>
-      <div class="six columns">
-        <a href="https://w4lkies.com" target="_blank">
-          <img src="/static/img/client-w4lkies.png" alt="W4lkies logo" class="profile" height="150px">
-        </a>
-        <br>
-        <b>W4lkies</b>
-        <p>ajrlewis.com has been a lifesaver for my small West London dog walking business. Their services have saved me countless hours by streamlining the booking process, automating invoice generation, and providing valuable insights into my business data. Highly recommend!</p>
-        <br>
-        <br>
-      </div>
-    </div>
-    <br>
-    <a href="#contact">Scroll to our contact details …</a>
+  <div class="caption">
+  <span class="border">Join Our Family of Thriving Businesses</span>
+</div>
+</div>
+<div class="container" id="clients">
+  <br>
+  <div class="row">
+    <h1>Our Clients</h1>
   </div>
-  <br>
-  <br>
+  <div class="row">
+    <div class="six columns profile">
+      <a href="https://hyperhumans.ai" target="_blank">
+        <img src="/static/img/logo-hyperhumans.png" alt="Hyperhumans Logo">
+      </a>
+      <h2>Hyperhumans</h2>
+      <span style="font-size: xxx-large;">“</span>
+      <p>We hired AJR Lewis based on a personal recommendation, and so far his work with us has been outstanding. Not only is he highly proficient in writing the actual code we need, but he has the brain to be able to make solid decisions and think up solutions that actually solve the problems that inevitably come up when developing software. Finally, he's just a great person to work with; self-managing, while fully able to mesh with our existing team. In short, hire him for your next software projects - we haven't regretted it for a second and neither will you.</p>
+    </div>
+    <div class="six columns profile">
+      <a href="https://w4lkies.com" target="_blank">
+        <img src="/static/img/logo-w4lkies.png" alt="W4lkies Logo">
+      </a>
+      <h2>W4lkies</h2>
+      <span style="font-size: xxx-large;">“</span>
+      <p>AJR Lewis has effectively built the tech for my dog walking business and I couldn't have had such a slick, smooth and easy to use infrastructure to create invoices and booking system without their help! Very professional and work done in very good time. Highly recommend.</p>
+    </div>
+  </div>
 </div>
 
+<!-- Get in touch -->
 <div class="contact">
-  <div class="container" id="contact">
-    <br>
-    <h2>Get in Touch</h2>
-    <div class="row">
-      <div class="twelve columns">
-        <a href="mailto:hello@ajrlewis.com">Contact us</a> to discover how we can add value to your business!
-      </div>
-    </div>
-    <br>
-    <a href="#" >Scroll back to the top …</a>
+  <div class="caption">
+    <span class="border">Get in Touch Today</span>
   </div>
-  <br>
-  <br>
 </div>
-
+<footer class="container">
+  <div class="row">
+    <div class="six columns">
+      <h4>Contact</h4>
+      <ul>
+        <li>E-mail: <a href="mailto:hello@ajrlewis.com?subject=Hello!">hello@ajrlewis.com</a></li>
+      </ul>
+    </div> 
+    <div class="six columns" style="word-wrap: break-word;">
+      <h4>Social</h4>
+      <ul>
+        <li>Github: <a href="https://github.com/ajrlewis" target="_blank">ajrlewis</a></li>
+        <li>Nostr: <a href="https://satellite.earth/@npub19ccv5fe7rn22cwasygsjkd5f0l64wv3fsw5jxtemvukfznfjtfvq0jmwsh" target="_blank">npub19ccv5fe7rn22cwasygsjkd5f0l64wv3fsw5jxtemvukfznfjtfvq0jmwsh</a></li>
+      </ul>
+    </div> 
+  </div>
+</footer>
 {% endblock content %}
+
+{% block footer %}{% endblock footer %}

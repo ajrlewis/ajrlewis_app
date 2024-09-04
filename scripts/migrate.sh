@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 init() {
   flask db init
 }

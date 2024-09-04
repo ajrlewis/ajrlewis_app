@@ -1,15 +1,13 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block navbar %}
-<nav>
-  <div class="container">
-      <ul>
-        <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
-        <li><a href="{{ url_for('invoice_bp.get') }}">Invoices</a></li>
-        <li><a href="{{ url_for('auth_bp.logout') }}">Logout</a></li>
-      </ul>
-  </div>
-</nav>
+<div class="container">
+  <ul>
+    <li><a href="{{ url_for('client_bp.get') }}">Clients</a></li>
+    <li><a href="{{ url_for('invoice_bp.get') }}">Invoices</a></li>
+    <li><a href="{{ url_for('auth_bp.logout') }}">Logout</a></li>
+  </ul>
+</div>
 {% endblock navbar %}
 
 {% block footer %}

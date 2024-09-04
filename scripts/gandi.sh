@@ -1,6 +1,16 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
-# Gandi utilities script for hosting project
+usage() {
+   echo "Gandi installation & development script."
+   echo
+   echo "Syntax: install.sh [-d|h]"
+   echo "options:"
+   echo "i     Initialize gandi and github remote repositories."
+   echo "p     Push to remote repositories."
+   echo "d     Deploy to gandi instance."
+   echo "u     Print this help for usage."
+   echo
+}
 
 init() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -13,47 +23,41 @@ init() {
 
 add_remotes(){
   git remote add gandi git+ssh://${GANDI_USER}@${GANDI_SERVER}/${GANDI_REPO}
-  git remote add github git@github.com:${GITHUB_USER}/${GITHUB_REPO}.git
-  echo "Git repository remotes added."
+  echo "Added gandi remote repository."
+  git remote add github git@github.com:${GITHUB_USER}/${APP_NAME}_app.git
+  echo "Added github remote repository."
 }
 
 push() {
   git push --force gandi master
+  echo "Push to git gandi remote."
   git push --force github master
-  echo "Push to git remotes."
+  echo "Push to git github remote."
 }
 
 deploy() {
   ssh ${GANDI_USER}@${GANDI_SERVER} deploy default.git
-  ssh ${GANDI_USER}@${GANDI_SERVER} clean default.git
   echo "Deployed to Gandi."
+  ssh ${GANDI_USER}@${GANDI_SERVER} clean default.git
   echo "Cleaned untracked files in repository."
 }
 
-backup_db() {
-  date=$(date '+%Y-%m-%d %H:%M:%S')
-  echo ssh ${GANDI_USER}@${GANDI_SERVER} "mysqldump -u root -p --database ${APP_NAME}_db" > backups/${APP_NAME}_db ${date}.sql
-  echo "Backup remote database."
-}
+source .env; # get environment variables
 
-# reset_log() {
-#   # https://${GANDI_USER}.admin.sd6.gpaas.net/log/www/uwsgi.log
-#   # echo "" > /srv/data/var/log/www/uwsgi.log
-# }
-
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  source .env
-  if [[ "$1" == "init" ]]; then
-    init
-    add_remotes
-  elif [[ "$1" == "push" ]]; then
-    push
-  elif [[ "$1" == "deploy" ]]; then
-    deploy
-  elif [[ "$1" == "push_and_deploy" ]]; then
-    push
-    deploy
-  else
-    echo "No command given!"
-  fi
-fi
+while getopts ":ipdu" option; do
+    case $option in
+        i) #
+            init;
+            add_remotes;;
+        p) #
+            push;;
+        d) #
+            deploy;;
+        u) # display help
+            usage;
+            exit;;
+        \?) # Invalid option
+            echo "Error: Invalid option";
+            exit;;
+   esac
+done

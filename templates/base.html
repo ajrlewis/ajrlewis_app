@@ -1,203 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    {% block head %}{% endblock head %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Language" content="en-us" />
-    <meta name="description" content="Home page for A.J.R. Lewis, Tech Solutions Consultancy & Services" />
-    <meta name="keywords" content="A.J.R. Lewis, Tech Solutions Consultancy & Services, AI, ML, Bitcoin" />
-    <meta name="revisit-after" content="1 Weeks" />
-    <meta name="distribution" content="global" />
-    <link rel="apple-touch-icon" href="/static/img/logo.png">
-    <meta name="apple-mobile-web-app-title" content="{{ config['WEBSITE_NAME'] }}">
-    <title>A.J.R. Lewis</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="en-us"/>
+    <link rel="canonical" href="https://ajrlewis.com"/>
+    <meta name="description" content="AJR Lewis, Tech Consultancy & Solutions Services"/>
+    <meta name="keywords" content="AJR Lewis, Tech Consultancy & Solutions Services, AI, ML, Bitcoin"/>
+    <meta name="revisit-after" content="1 Month"/>
+    <meta name="distribution" content="global"/>
+    <meta property="article:modified_time" content="2024-09-01T05:35:40+00:00"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:title" content="AJR Lewis | Tech Consultancy & Solutions Services"/>
+    <meta property="og:description" content="AJR Lewis provides API backend and frontend tech services."/>
+    <meta property="og:image" content="https://ajrlewis.com/static/img/logo.png"/>
+    <meta property="og:image:width" content="2500"/>
+    <meta property="og:image:height" content="1330"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:url" content="https://ajrlewis.com"/>
+    <meta property="og:site_name" content="AJR lewis"/>
+    <meta property="og:type" content="website"/>
+    <link rel="apple-touch-icon" href="/static/img/logo.png"/>
+    <meta name="apple-mobile-web-app-title" content="AJR Lewis"/>
+    <title>AJR Lewis</title>
     <link rel="shortcut icon" href="/static/img/favicon.ico">
-    <style>
-html {
-  animation: fadeIn 1s ease-in-out;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background: #1F242C;
-}
-
-header {
-  background: white;
-  color: #1F242C;
-  text-align: center;
-  padding: 10px 0;
-}
-
-nav {
-  background: #1F242C;
-  color: white;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-nav li {
-  float: left;
-}
-
-nav li a {
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-}
-
-nav li a:hover {
-}
-
-.dashboard, .overview {
-  background: #F2D9C2;
-  color:  #1F242C;
-}
-
-.services {
-   background: #F8F8F8;
-   color: #333333;
-}
-
-.team {
-   background: #EE423C;
-   color: #FFFFFF;
-}
-
-.clients {
-   background: #F2E2D9;
-   color: #1F242C;
-}
-
-.contact {
-   background: #70BFEF;
-   color: #FFFFFF;
-  min-height: 66vh;
-}
-
-footer {
-  background: #1F242C;
-  color: white;
-}
-
-.dashboard, .overview, .services, .team, .clients, .contact, footer {
-  min-height: 66vh;
-}
-
-a {
-  color: black;
-}
-
-a:hover {
-  color: #1F242C;
-}
-
-
-nav a, footer a {
-  color: white;
-}
-
-nav a:hover, footer a:hover {
-  color: #CCCCCC;
-}
-
-.card {
-  width: 90%;
-  background-color: #DEF2F1;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 2px solid #2A7977;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.profile {
-  text-align: center;
-  margin-top: 20px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 50%;
-  max-width: 150px;
-}
-
-@keyframes fadeIn {
-  from {
-  opacity: 0;
-  }
-  to {
-  opacity: 1;
-  }
-}
-    </style>
-</head>
-<body>
-  <header>
-    <br>
-    <div class="row">
-      <div class="twelve columns">
-          <a href="{{ url_for('index_bp.get') }}"><img src="/static/img/logo.png" alt="Company Logo" class="logo"></a>
-      </div>
-    </div>
-    <br>
-    <br>
-  </header>
-  {% block navbar %}{% endblock navbar %}
-  <content>
-    {% block content %}{% endblock content %}
-  </content>
-
-{% block footer %}
-<footer>
-    <br>
-    <div class="row">
-        <div class="twelve columns">
-            &copy; 2024 A.J.R. Lewis - All Rights Reserved
-            <br>
-            <br>
-        </div> 
-    </div> 
-    <div class="row">
-        <div class="six columns">
-            <h4>Contact</h4>
-            <ul>
-                <li>E-mail: <a href="mailto:hello@ajrlewis.com">hello@ajrlewis.com</a></li>
-            </ul>
-        </div> 
-        <div class="six columns">
-            <h4>Social</h4>
-            <ul>
-                <li>Github: <a href="https://github.com/ajrlewis" target="_blank">https://github.com/ajrlewis</a> </li>
-                <li>Nostr: Coming soon™</li>
-            </ul>
-        </div> 
-    </div> 
-    <br>
-</footer>
-
-
-
-{% endblock footer %}
-
-</body>
-
-
+    <link rel="stylesheet" href="/static/css/vendor/skeleton.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <header>
+      {% block header %}{% endblock header %}
+    </header>
+    <nav>
+      {% block nav %}{% endblock nav %}
+    </nav>
+    <content>
+      {% block content %}{% endblock content %}
+    </content>
+    <footer>
+    {% block footer %}{% endblock footer %}
+    </footer>
+  </body>
 </html>
