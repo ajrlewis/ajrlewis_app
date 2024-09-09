@@ -107,14 +107,19 @@ def create(invoice: Invoice):
     pdf.line_break()
 
     pdf.section("Payment")
-    pdf.draw_text("All payments should be made to the following on-chain address:")
+    pdf.draw_text(
+        f"Payment for {invoice.estimated_cost} should be made to the following on-chain address:"
+    )
     pdf.line_break()
     # image = qrcodekit.get_image_with_data(invoice.payment_address)
     bitcoin_logo = Image.open("static/img/logo-bitcoin.png")
     bitcoin_logo = bitcoin_logo.convert("RGBA")
-    image = qrcodekit.get_image_with_data_and_logo(
-        invoice.payment_address, bitcoin_logo
+    # data = invoice.payment_address
+    amount = float(
+        "".join([s for s in invoice.estimated_cost if s.isdigit() or s == "."])
     )
+    data = f"bitcoin:{invoice.payment_address}?amount={amount}"
+    image = qrcodekit.get_image_with_data_and_logo(data, bitcoin_logo)
     pdf._x = pdf._x_middle - 150 / 2
     pdf.add_image(image, width=150, height=150)
     pdf.line_break()
