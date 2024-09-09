@@ -24,17 +24,18 @@ invoice_bp = Blueprint("invoice_bp", __name__)
 
 
 @invoice_bp.route("/", methods=["GET"])
-@invoice_bp.route("/<int:invoice_id>", methods=["GET"])
+@invoice_bp.route("/<int:id>", methods=["GET"])
 @login_required
-def get(invoice_id: int = None):
+def get(id: int = None):
+    invoice_id = id
     logger.debug(f"{invoice_id = }")
     invoice = None
     invoices = None
     invoice_form = InvoiceForm()
     if invoice_id is None:
-        # invoices = Invoice.query.all()
+        # Order by date_issued
         invoices = Invoice.query.order_by(desc(Invoice.date_issued)).all()
-        # order by date_issued
+        # Resolve client name
         for _invoice in invoices:
             client = Client.query.get(_invoice.client_id)
             if client:

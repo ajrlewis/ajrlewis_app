@@ -9,9 +9,10 @@ client_bp = Blueprint("client_bp", __name__)
 
 
 @client_bp.route("/", methods=["GET"])
-@client_bp.route("/<int:client_id>", methods=["GET"])
+@client_bp.route("/<int:id>", methods=["GET"])
 @login_required
-def get(client_id: int = None):
+def get(id: int = None):
+    client_id = id
     client = None
     clients = None
     client_form = ClientForm()
@@ -22,7 +23,7 @@ def get(client_id: int = None):
         if client:
             client_form.set_data_from_model(client)
         else:
-            flash(f"Booking not found.", "error")
+            flash(f"Client not found.", "error")
 
     return render_template(
         "record.html",
