@@ -46,7 +46,8 @@ def create_app(Config) -> Flask:
         from blueprints.auth_bp import auth_bp
         from blueprints.dashboard_bp import dashboard_bp
         from blueprints.invoice_bp import invoice_bp
-        from blueprints.receipt_bp import receipt_bp
+
+        # from blueprints.receipt_bp import receipt_bp
         from blueprints.client_bp import client_bp
 
         app.register_blueprint(index_bp, url_prefix="/")
@@ -54,7 +55,7 @@ def create_app(Config) -> Flask:
         app.register_blueprint(auth_bp, url_prefix="/auth")
         app.register_blueprint(dashboard_bp, url_prefix="/dashboard")
         app.register_blueprint(invoice_bp, url_prefix="/dashboard/invoices")
-        app.register_blueprint(receipt_bp, url_prefix="/dashboard/receipts")
+        # app.register_blueprint(receipt_bp, url_prefix="/dashboard/receipts")
         app.register_blueprint(client_bp, url_prefix="/dashboard/clients")
 
         return app
