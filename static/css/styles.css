@@ -11,8 +11,8 @@ html {
 body, html {
   font-family: "Ubuntu", sans-serif;
   font-family: "Open Sans", sans-serif;
-  background-color: white
   color: #111;
+  color: #fff;
   text-align: center;
   height: 100%;
   margin: 0;
@@ -20,14 +20,16 @@ body, html {
 
 body p {
   color: black;
+  color: #fff;
 }
 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   color: #111;
+  color: #fff;
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
@@ -36,16 +38,11 @@ footer {
 
 .profile img {
   text-align: center;
-  margin-top: 20px;
   display: block;
-  margin: 20px auto;
-  border-radius: 50%;
   height: 250px;
-  max-height: 250px;
   max-height: 45vw;
 }
 
-/* for section in sections */
 .overview,
 .services,
 .team,
@@ -58,29 +55,23 @@ footer {
   background-size: cover;
 }
 .overview {
-/*  background-image: url("/static/img/background-team.jpeg");*/
   background-image: url("/static/img/background-person-sitting-by-computer.png");
-/*  background-image: url("/static/img/background-computer-screen.jpeg");  */
   min-height: 100%;
+
 }
 .services {
-/*  background-image: url("/static/img/background-services.png");*/
   background-image: url("/static/img/background-computer-on-desk.jpeg");
   min-height: 400px;
 }
 .team {
-/*  background-image: url("/static/img/background-clients.jpeg");*/
 /*  background-image: url("/static/img/background-person-sitting-by-computer.png");*/
   min-height: 400px;
 }
 .clients {
-/*  background-image: url("/static/img/background-talking-to-customers.jpeg");*/
-/*  background-image: url("/static/img/background-talking-to-customers.jpeg");*/
   background-image: url("/static/img/background-computer-screen.jpeg");  
   min-height: 100%;
 }
 .contact {
-/*  background-image: url("/static/img/background-overview.png");*/
   background-image: url("/static/img/background-talking-to-customers.jpeg");
   min-height: 100%;
 }
@@ -103,18 +94,22 @@ footer {
   width: 100%;
   text-align: center;
   color: white;
-
 }
 
 .caption span.border {
   display: inline-block;
-  background-color: #111;
   color: #fff;
   background: #1F242C;
-  background-color: #00080;
   padding: 18px;
   font-size: 25px;
   letter-spacing: 10px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* Skeleton overrides */
