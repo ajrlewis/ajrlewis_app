@@ -10,6 +10,7 @@ html {
 
 body, html {
   font-family: "Ubuntu", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: white
   color: #111;
   text-align: center;
@@ -57,23 +58,30 @@ footer {
   background-size: cover;
 }
 .overview {
-  background-image: url("/static/img/background-overview.png");
+/*  background-image: url("/static/img/background-team.jpeg");*/
+  background-image: url("/static/img/background-person-sitting-by-computer.png");
+/*  background-image: url("/static/img/background-computer-screen.jpeg");  */
   min-height: 100%;
 }
 .services {
-  background-image: url("/static/img/background-services.png");
+/*  background-image: url("/static/img/background-services.png");*/
+  background-image: url("/static/img/background-computer-on-desk.jpeg");
   min-height: 400px;
 }
 .team {
-  background-image: url("/static/img/background-team.png");
+/*  background-image: url("/static/img/background-clients.jpeg");*/
+/*  background-image: url("/static/img/background-person-sitting-by-computer.png");*/
   min-height: 400px;
 }
 .clients {
-  background-image: url("/static/img/background-team.png");
+/*  background-image: url("/static/img/background-talking-to-customers.jpeg");*/
+/*  background-image: url("/static/img/background-talking-to-customers.jpeg");*/
+  background-image: url("/static/img/background-computer-screen.jpeg");  
   min-height: 100%;
 }
 .contact {
-  background-image: url("/static/img/background-overview.png");
+/*  background-image: url("/static/img/background-overview.png");*/
+  background-image: url("/static/img/background-talking-to-customers.jpeg");
   min-height: 100%;
 }
 
@@ -94,7 +102,6 @@ footer {
   top: 50%;
   width: 100%;
   text-align: center;
-  color: #000;
   color: white;
 
 }
@@ -103,9 +110,8 @@ footer {
   display: inline-block;
   background-color: #111;
   color: #fff;
-  color: white;
   background: #1F242C;
-  background-color: black;
+  background-color: #00080;
   padding: 18px;
   font-size: 25px;
   letter-spacing: 10px;
@@ -113,21 +119,18 @@ footer {
 
 /* Skeleton overrides */
 .container {
-/*  padding-top: 5vh;*/
-/*  padding-bottom: 5vh;*/
-/*  min-height: 33vh;*/
+  background-color: transparent;
 }
 
 .columns {
   min-height: 100%;
-  padding: 20px;
 }
 
-.container h1 {
+.container h1, h2 {
+  font-weight: bold;
 }
 
 .bordered {
   border-style: solid;
   border-color: #00000060;
-
 }
