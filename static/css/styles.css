@@ -1,3 +1,8 @@
+:root {
+  --color-black: #181818;
+  --color-white: #fff;
+}
+
 
 @font-face {
     font-family: "Ubuntu";
@@ -9,18 +14,16 @@ html {
 }
 
 body, html {
-  font-family: "Ubuntu", sans-serif;
-  font-family: "Open Sans", sans-serif;
-  color: #111;
-  color: #fff;
+/*  font-family: "Ubuntu", sans-serif;*/
+/*  font-family: "Open Sans", sans-serif;*/
+  color: var(--color-white);
   text-align: center;
   height: 100%;
   margin: 0;
 }
 
 body p {
-  color: black;
-  color: #fff;
+  color: var(--color-white);
 }
 
 footer {
@@ -28,8 +31,7 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: transparent;
-  color: #111;
-  color: #fff;
+  color: var(--color-white);
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
@@ -64,7 +66,7 @@ footer {
   min-height: 400px;
 }
 .team {
-/*  background-image: url("/static/img/background-person-sitting-by-computer.png");*/
+  background-image: url("/static/img/background-person-sitting-by-computer.png");
   min-height: 400px;
 }
 .clients {
@@ -93,16 +95,22 @@ footer {
   top: 50%;
   width: 100%;
   text-align: center;
-  color: white;
+  color: var(--color-white);
 }
 
 .caption span.border {
   display: inline-block;
-  color: #fff;
-  background: #1F242C;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
+  color: var(--color-white);
+  background: var(--color-black);
+  opacity: 80%;
+  padding: 2.0rem;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: 4.0rem;
+  line-height: 1.2;
+  letter-spacing: -.1rem;
+  letter-spacing: 1rem;
+  letter-spacing: 0.5rem;
 }
 
 .center {
@@ -113,19 +121,29 @@ footer {
 }
 
 /* Skeleton overrides */
-.container {
-  background-color: transparent;
+p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -.05rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
-.columns {
-  min-height: 100%;
+/* Larger than phablet */
+@media (min-width: 550px) {
+  p { font-size: 2.4rem; }
+}
+
+.container {
+  background-color: transparent;
 }
 
 .container h1, h2 {
   font-weight: bold;
 }
 
-.bordered {
-  border-style: solid;
-  border-color: #00000060;
+.columns {
+  min-height: 100%;
 }
+
+
