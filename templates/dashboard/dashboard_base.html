@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}{% endblock head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="en-us"/>
+    <title>A.J.R.Lewis | Dashboard</title>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link rel="stylesheet" href="/static/css/vendor/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/vendor/Skeleton-2.0.4/css/skeleton.css">
+    <!-- <script src="/static/js/vendor/htmx.min.js"></script> -->
+
+<style type="text/css">
+  .button.button-delete,
+  button.button-delete,
+  input[type="submit"].button-delete,
+  input[type="reset"].button-delete,
+  input[type="button"].button-delete {
+    color: #FFF;
+    background-color: #d11a2a;
+    border-color: #d11a2a; }
+  .button.button-delete:hover,
+  button.button-delete:hover,
+  input[type="submit"].button-delete:hover,
+  input[type="reset"].button-delete:hover,
+  input[type="button"].button-delete:hover,
+  .button.button-delete:focus,
+  button.button-delete:focus,
+  input[type="submit"].button-delete:focus,
+  input[type="reset"].button-delete:focus,
+  input[type="button"].button-delete:focus {
+    color: #FFF;
+    background-color: #F94252;
+    border-color: #F94252; }
+</style>
+
+  </head>
+  <body hx-headers='{"X-CSRF-TOKEN": "{{ csrf_token() }}"}'>
+    <div class="container">
+      <br>
+      <h1>Dashboard</h1>
+      {% block nav %}
+        <nav>
+          <a href="/">Home</a>
+          <a href="/dashboard/clients">Clients</a>
+          <a href="/dashboard/invoices">Invoices</a>
+          <!-- <a href="/dashboard/receipts">Receipts</a> -->
+          <a href="/dashboard/auth/logout">Sign Out</a>
+        </nav>
+      {% endblock nav %}
+      <br>
+      <br>
+    </div>
+    <content>
+      {% block content %}{% endblock content %}
+    </content>
+    <script src="/static/js/vendor/htmx.min.js"></script>
+    <!-- <script src="/static/js/scripts.js"></script> -->
+  </body>
+</html>

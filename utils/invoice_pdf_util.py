@@ -1,5 +1,7 @@
+from bitcoinkit import utils as bitcoinkit_utils
 from PIL import Image
 from qrcodekit import qrcodekit
+
 from models.invoice import Invoice
 from utils.pdf_util import PDF
 
@@ -70,6 +72,8 @@ class InvoicePDF(PDF):
         self.line_break()
         self.line_break()
         self.line_break()
+        self.line_break()
+        self.line_break()
 
 
 def create(invoice: Invoice):
@@ -93,11 +97,11 @@ def create(invoice: Invoice):
     pdf.line_break()
 
     pdf.subsection("Duration")
-    pdf.draw_text(invoice.estimated_duration)
+    pdf.draw_text(f"{invoice.duration} days")
     pdf.line_break()
 
     pdf.subsection("Cost")
-    pdf.draw_text(invoice.estimated_cost)
+    pdf.draw_text(bitcoinkit_utils.to_string(invoice.value))
     pdf.line_break()
 
     pdf.section("Success Criteria")
@@ -108,17 +112,13 @@ def create(invoice: Invoice):
 
     pdf.section("Payment")
     pdf.draw_text(
-        f"Payment for {invoice.estimated_cost} should be made to the following on-chain address:"
+        f"Payment for {bitcoinkit_utils.to_string(invoice.value)} should be made to the following on-chain address:"
     )
     pdf.line_break()
     # image = qrcodekit.get_image_with_data(invoice.payment_address)
     bitcoin_logo = Image.open("static/img/logo-bitcoin.png")
     bitcoin_logo = bitcoin_logo.convert("RGBA")
-    # data = invoice.payment_address
-    amount = float(
-        "".join([s for s in invoice.estimated_cost if s.isdigit() or s == "."])
-    )
-    data = f"bitcoin:{invoice.payment_address}?amount={amount}"
+    data = f"bitcoin:{invoice.payment_address}?amount={bitcoinkit_utils.satoshis_to_bitcoins(invoice.value)}"
     image = qrcodekit.get_image_with_data_and_logo(data, bitcoin_logo)
     pdf._x = pdf._x_middle - 150 / 2
     pdf.add_image(image, width=150, height=150)
@@ -154,15 +154,6 @@ Replication of client data or ideas without permission is strictly prohibited.
     pdf.line_break()
 
     pdf.subsection("Payment Terms")
-    # "A.J.R. Lewis and the client agree to a 50% downpayment of the quoted amount at the start of their collaboration. The remainder will be paid at the time of delivery of the agreed work. Both parties agree that an on-chain transaction to the above address with 3 confirmations constitutes as payment received by A.J.R. Lewis. It is the responsibility of A.J.R. Lewis to ensure correct payment details are sent to the client."
-    #     pdf.draw_text(
-    #         """
-    # A.J.R. Lewis and the client agree to a 50% downpayment of the quoted amount at the start of their collaboration.
-    # The remainder will be paid at the time of delivery of the agreed work.
-    # Both parties agree that an on-chain transaction to the above address with 3 confirmations constitutes as payment received by A.J.R. Lewis.
-    # It is the responsibility of A.J.R. Lewis to ensure correct payment details are sent to the client.
-    #     """
-    #     )
     pdf.draw_text(
         """
 Full payment should be made by or on the first Sunday once this invoice is generated.

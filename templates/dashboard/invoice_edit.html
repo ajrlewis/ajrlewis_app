@@ -1,0 +1,15 @@
+<div id="invoice-{{ invoice.id }}" hx-target="this" hx-swap="outerHTML">
+  <form hx-put="/dashboard/invoices/{{ invoice.id }}">
+  <div class="row">
+    <div class="eight columns">
+      {{ invoice_form.client }}
+      · {{ invoice_form.title }}
+    </div>
+    <div class="four columns">
+      {{ invoice_form.submit(class_="button button-primary", value="Update") }}
+      <button class="button button-primary" hx-get="/dashboard/invoices/{{ invoice.id }}">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,40 @@
+{% extends "dashboard/dashboard_base.html" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Invoices</h1>
+  </div>
+  <div class="container">
+    <h2>Add a Invoice</h2>
+    <div id="add-client">
+      {% with invoice_form=invoice_form %}
+        {% include "dashboard/invoice_form.html" %}
+      {% endwith %}    
+    </div>
+  </div>
+  <div class="container">
+    <h2>Your Invoices</h2>
+    <!-- { with invoice_filter_form=invoice_filter_form %} -->
+      <!-- { include   "dashboard/invoice_filter_form.html" %} -->
+    <!-- { endwith %} -->
+    <!-- invoice_filter_form -->
+    <!-- hx-post="/dashboard/invoices/filter" -->
+    <!-- hx-target="#invoices" -->
+    <!--  -->
+    <!-- <button class="button button-primary">Reset</button> -->
+    <!-- hx-get="/dashboard/invoices" -->
+    <!-- hx-target="#invoices" -->
+  </div>
+  <div class="container">
+    <div id="invoices" hx-target="closest div" hx-swap="outerHTML swap:0.5s"> 
+      {%for invoice in invoices %}
+        {% with invoice=invoice %}
+          {% include "dashboard/invoice_detail.html" %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+{% endblock content %}

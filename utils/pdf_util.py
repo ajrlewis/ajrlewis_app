@@ -51,10 +51,20 @@ class PDF:
         # self._canvas = canvas.Canvas("canvas.pdf", pagesize=letter)
 
     def header(self):
-        image = Image.open("static/img/logo-ajrlewis.png")
+        # image = Image.open("static/img/logo-ajrlewis.png")
+        image = Image.open("static/img/logo.png")
         image = image.convert("RGBA")
         self.add_image(image, width=150, height=150)
         self.line_break()
+        y = self._y
+        self.bold_font()
+        # self.draw_text("AJR Lewis")
+        self.draw_text("A.J.R.Lewis")
+        # self.italic_font()
+        # self.regular_font()
+        # self.draw_text("Design | Build | Maintain")
+        self.regular_font()
+        self._y = y
 
     def footer(self):
         self.italic_font()
@@ -133,11 +143,12 @@ class PDF:
             self._y -= self._line_height
 
     def add_image(self, image: Image.Image, width: int, height: int):
+        x = self._x
         if self._y - height < self._y_margin:
             self.page_break()
         self._canvas.drawImage(
             ImageReader(image),
-            self._x,
+            x,
             self._y - height,
             width=width,
             height=height,

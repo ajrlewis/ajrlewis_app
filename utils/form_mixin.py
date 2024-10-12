@@ -4,6 +4,12 @@ from app import db
 
 
 class FormMixin:
+    @classmethod
+    def from_model(cls, model: db.Model):
+        form = cls()
+        form.set_data_from_model(model)
+        return form
+
     def set_data_from_model(self, model: db.Model):
         for field_name, field_value in model.__dict__.items():
             if field_name in self._fields:

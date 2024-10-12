@@ -1,0 +1,24 @@
+<div>
+  <form hx-post="/dashboard/clients/" hx-swap="beforeend" hx-target="#clients">
+    <div class="row">
+      <div class="four columns">
+        {{ client_form.name.label() }}
+        {{ client_form.name(class_="u-full-width") }}
+      </div>
+      <div class="four columns">
+        {{ client_form.domain.label() }}
+        {{ client_form.domain(class_="u-full-width") }}
+      </div>
+      <div class="four columns">
+        {{ client_form.email.label() }}
+        {{ client_form.email(class_="u-full-width") }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        {{ client_form.submit(class_="button button-primary") }}
+      </div>
+    </div>
+  </form>
+</div>
+

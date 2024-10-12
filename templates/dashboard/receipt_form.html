@@ -1,0 +1,41 @@
+
+{% if method == "post" %}
+  <form hx-post="/dashboard/receipts" hx-swap="beforeend" hx-target="#new-receipt">
+{% else %}
+  <form hx-put="/dashboard/receipts/{{ receipt.receipt_id }}" hx-target="this" hx-swap="outerHTML">
+{% endif %}
+
+  {{ receipt_form.csrf_token }}
+  <div>
+    {{ receipt_form.invoice_id.label() }}
+    {{ receipt_form.invoice_id }}
+  </div>
+  <div>
+    {{ receipt_form.tx_id.label() }}
+    {{ receipt_form.tx_id }}
+  </div>
+  <div>
+    {{ receipt_form.block_time.label() }}
+    {{ receipt_form.block_time }}
+  </div>
+  <div>
+    {{ receipt_form.block_height.label() }}
+    {{ receipt_form.block_height }}
+  </div>
+  <div>
+    {{ receipt_form.fiat.label() }}
+    {{ receipt_form.fiat }}
+  </div>
+  <div>
+    {{ receipt_form.value_fiat.label() }}
+    {{ receipt_form.value_fiat }}
+  </div>
+
+  {% if method == "post" %}
+    {{ receipt_form.submit }}
+  {% else %}
+    <button hx-get="/dashboard/receipts/{{ receipt.receipt_id }}">Cancel</button>
+  {% endif %}
+
+</form>
+

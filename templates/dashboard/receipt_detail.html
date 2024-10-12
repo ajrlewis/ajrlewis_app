@@ -1,0 +1,35 @@
+<div id="receipt-{{ receipt.receipt_id }}" hx-target="this" hx-swap="outerHTML">
+  <div>
+    { receipt_form.invoice_id.label() }
+    {{ receipt.invoice_id }}
+  </div>
+  <div>
+    { receipt_form.tx_id.label() }
+    {{ receipt.tx_id }}
+  </div>
+  <div>
+    { receipt_form.block_time.label() }
+    {{ receipt.block_time }}
+  </div>
+  <div>
+    { receipt_form.block_height.label() }
+    {{ receipt.block_height }}
+  </div>
+  <div>
+    { receipt_form.fiat.label() }
+    {{ receipt.fiat }}
+  </div>
+  <div>
+    { receipt_form.value_fiat.label() }
+    {{ receipt.value_fiat }}
+  </div>
+  <button hx-get="/dashboard/receipts/{{ receipt.receipt_id }}/edit">
+    Edit
+  </button>
+  <button hx-get="/dashboard/receipts/{{ receipt.receipt_id }}/download" hx-swap="none">
+    Download
+  </button>
+  <button>
+    Delete
+  </button>
+</div>

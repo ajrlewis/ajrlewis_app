@@ -3,19 +3,18 @@
   --color-white: #fff;
 }
 
-
-@font-face {
-    font-family: "Ubuntu";
-    src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") 
-}
+/*@font-face {*/
+/*    font-family: "Ubuntu";*/
+/*    src: url("/static/fonts/Ubuntu/Ubuntu-Regular.ttf") */
+/*}*/
 
 html {
+  background: var(--color-black);
   scroll-behavior: smooth;
 }
 
 body, html {
 /*  font-family: "Ubuntu", sans-serif;*/
-/*  font-family: "Open Sans", sans-serif;*/
   color: var(--color-white);
   text-align: center;
   height: 100%;
@@ -98,7 +97,7 @@ footer {
   color: var(--color-white);
 }
 
-.caption span.border {
+.caption span {
   display: inline-block;
   color: var(--color-white);
   background: var(--color-black);
@@ -111,6 +110,10 @@ footer {
   letter-spacing: -.1rem;
   letter-spacing: 1rem;
   letter-spacing: 0.5rem;
+}
+
+.content {
+  background: var(--color-black);
 }
 
 .center {
@@ -145,5 +148,3 @@ p {
 .columns {
   min-height: 100%;
 }
-
-
