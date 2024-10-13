@@ -1,16 +1,22 @@
-{% extends "dashboard/dashboard_base.html" %}
+{% extends "dashboard/base.html" %}
 
 {% block content %}
   <div class="container">
     <h1>Invoices</h1>
   </div>
   <div class="container">
-    <h2>Add a Invoice</h2>
+    <hr>
+  </div>
+  <div class="container">
+    <h2>Add Invoice</h2>
     <div id="add-client">
       {% with invoice_form=invoice_form %}
         {% include "dashboard/invoice_form.html" %}
       {% endwith %}    
     </div>
+  </div>
+  <div class="container">
+    <hr>
   </div>
   <div class="container">
     <h2>Your Invoices</h2>

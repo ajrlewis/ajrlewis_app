@@ -20,7 +20,7 @@ class InvoiceForm(FlaskForm, FormMixin):
     reference = StringField("Reference", validators=[Optional()])
     title = StringField("Title", validators=[DataRequired()])
     summary = TextAreaField("Summary", validators=[DataRequired()])
-    technology = TextAreaField("Technology", validators=[DataRequired()])
+    technology = StringField("Technology", validators=[DataRequired()])
     duration = IntegerField("Duration / days", validators=[DataRequired()])
     value = IntegerField("Value / satoshis", validators=[DataRequired()])
     payment_address = StringField("Payment Address", validators=[DataRequired()])

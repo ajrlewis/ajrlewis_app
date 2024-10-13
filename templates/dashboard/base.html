@@ -6,21 +6,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Language" content="en-us"/>
+   
+    <meta http-equiv="refresh" content="60"/>
+
     <title>A.J.R.Lewis | Dashboard</title>
     <link rel="shortcut icon" href="/static/img/favicon.ico">
     <link rel="stylesheet" href="/static/css/vendor/Skeleton-2.0.4/css/normalize.css">
     <link rel="stylesheet" href="/static/css/vendor/Skeleton-2.0.4/css/skeleton.css">
-    <!-- <script src="/static/js/vendor/htmx.min.js"></script> -->
+    <link rel="stylesheet" href="/static/css/colors.css">
 
 <style type="text/css">
+html {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+body {
+  color: var(--color-white);
+}
+.container {
+}
+
+  /* Skeleton overrides */
+
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 1;
+  filter: invert(0.8);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.6;
+}
+
+  /* Skeleton additions */
   .button.button-delete,
   button.button-delete,
   input[type="submit"].button-delete,
   input[type="reset"].button-delete,
   input[type="button"].button-delete {
     color: #FFF;
-    background-color: #d11a2a;
-    border-color: #d11a2a; }
+    background-color: #F94252;
+    border-color: #F94252; }
   .button.button-delete:hover,
   button.button-delete:hover,
   input[type="submit"].button-delete:hover,
@@ -32,13 +80,16 @@
   input[type="reset"].button-delete:focus,
   input[type="button"].button-delete:focus {
     color: #FFF;
-    background-color: #F94252;
-    border-color: #F94252; }
+    background-color: #d11a2a;
+    border-color: #d11a2a; }
 </style>
 
   </head>
   <body hx-headers='{"X-CSRF-TOKEN": "{{ csrf_token() }}"}'>
     <div class="container">
+      <br>
+      <img src="/static/img/logo.png" height="250px" width="250px">
+      <br>
       <br>
       <h1>Dashboard</h1>
       {% block nav %}
@@ -50,6 +101,7 @@
           <a href="/dashboard/auth/logout">Sign Out</a>
         </nav>
       {% endblock nav %}
+      <br>
       <br>
       <br>
     </div>
