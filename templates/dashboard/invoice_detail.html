@@ -1,24 +1,24 @@
 <div id="invoice-{{ invoice.id }}" hx-target="this" hx-swap="outerHTML">
   <div class="row">
-    <div class="seven columns">
+    <div class="nine columns">
     {{ invoice.client.name }}
-    · {{ invoice.title }}
     · {{ invoice.date_issued.date() }}
+    · {{ invoice.title }}
     </div>
-    <div class="five columns">
-      <a class="button button-primary" href="/dashboard/invoices/{{ invoice.id }}/download" target="_blank">
-        Download
+    <div class="one columns">
+      <a class="button button-primary u-full-width" href="/dashboard/invoices/{{ invoice.id }}/download" target="_blank">
+        <i class="fa-solid fa-download"></i>
       </a>
-      <button class="button button-primary" hx-get="/dashboard/invoices/{{ invoice.id }}/edit">
-        Edit
+    </div>
+    <div class="one columns">
+      <button class="button button-edit u-full-width" hx-get="/dashboard/invoices/{{ invoice.id }}/edit">
+        <i class="fas fa-edit"></i>
       </button>
-      <button class="button button-delete" hx-delete="/dashboard/invoices/{{ invoice.id }}" hx-confirm="Are you sure you wish to delete this invoice?">
-        Delete
+    </div>
+    <div class="one columns">
+      <button class="button button-delete u-full-width" hx-delete="/dashboard/invoices/{{ invoice.id }}" hx-confirm="Are you sure you wish to delete this invoice?">
+        <i class="fas fa-trash"></i>
       </button>
     </div>
   </div>
 </div>
-<!-- summary -->
-<!-- technology -->
-<!-- duration  # in days -->
-<!-- payment_address -->

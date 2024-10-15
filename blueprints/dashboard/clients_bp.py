@@ -2,6 +2,7 @@ import datetime
 
 from flask import Blueprint, render_template
 from flask_login import current_user, login_required
+from loguru import logger
 from sqlalchemy import desc
 
 from app import db
@@ -79,6 +80,16 @@ def delete(client_id: int):
     return ""
 
 
+def render_oob_template(template: str, div_id: str, **kwargs) -> str:
+    rendereds = [
+        f'<div hx-swap-oob="afterbegin" id="{div_id}">',
+        render_template(template, **kwargs),
+        "</div>",
+    ]
+    rendered = "\n".join(rendereds)
+    return rendered
+
+
 @clients_bp.route("/", methods=["POST"])
 @login_required
 def add():
@@ -88,4 +99,11 @@ def add():
     else:
         logger.error("client form did not validate on submit")
         return ""
-    return render_template("dashboard/client_detail.html", client=client)
+    oob_rendered = render_oob_template(
+        "dashboard/client_detail.html", "clients", client=client
+    )
+    client_form = ClientForm(formdata=None)
+    client_form.name.data = "Foo Bar"
+    logger.debug(client_form)
+    rendered = render_template("dashboard/client_form.html", client_form=client_form)
+    return "\n".join([oob_rendered, rendered]), 200

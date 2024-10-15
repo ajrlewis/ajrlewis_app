@@ -33,7 +33,10 @@
   </div>
   <div class="container">
     <div id="invoices" hx-target="closest div" hx-swap="outerHTML swap:0.5s"> 
-      {%for invoice in invoices %}
+      <!-- { with invoices %} -->
+        <!-- { include "dashboard/invoices.html" %} -->
+      <!-- { endwith %} -->
+      {% for invoice in invoices %}
         {% with invoice=invoice %}
           {% include "dashboard/invoice_detail.html" %}
         {% endwith %}

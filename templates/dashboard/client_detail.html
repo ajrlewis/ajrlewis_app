@@ -1,17 +1,30 @@
-<div id="client-{{ client.id }}" hx-target="this" hx-swap="outerHTML">
+<div class="client" id="client-{{ client.id }}">
   <div class="row">
     <div class="eight columns">
-    {{ client.name }}
-    · {{ client.domain }}
-    · {{ client.email }}
+      <div class="htmx-indicator" id="client-{{ client.id }}-indicator">
+        <img src="/static/img/bars.svg" style="width: 1rem;" />
+      </div>
+      {{ client.name }}
+      · {{ client.domain }}
+      · {{ client.email }}
     </div>
     <div class="four columns">
-      <button class="button button-primary" hx-get="/dashboard/clients/{{ client.id }}/edit">
+      <button class="button button-primary"
+      hx-target="#client-{{ client.id }}"
+      hx-swap="outerHTML"
+      hx-get="/dashboard/clients/{{ client.id }}/edit">
         Edit
       </button>
-      <button class="button button-delete" hx-delete="/dashboard/clients/{{ client.id }}" hx-confirm="Are you sure you wish to delete this client?">
-        Delete
+      <button class="button button-delete"
+      hx-indicator="#client-{{ client.id }}-indicator"
+      hx-target="#client-{{ client.id }}"
+      hx-swap="outerHTML swap:500ms"
+      hx-delete="/dashboard/clients/{{ client.id }}"
+      hx-confirm="Are you sure you wish to delete this client?"
+      >
+      &nbsp;
       </button>
     </div>
   </div>
 </div>
+

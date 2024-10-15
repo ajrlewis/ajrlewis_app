@@ -1,16 +1,18 @@
-<div id="client-{{ client.id }}" hx-target="this" hx-swap="outerHTML">
-  <form hx-put="/dashboard/clients/{{ client.id }}">
-  <div class="row">
-    <div class="eight columns">
-      {{ client_form.name }}
-      · {{ client_form.domain }}
-      · {{ client_form.email }}
-    </div>
-    <div class="four columns">
-      {{ client_form.submit(class_="button button-primary", value="Update") }}
-      <button class="button button-primary" hx-get="/dashboard/clients/{{ client.id }}">
-        Cancel
-      </button>
+<!-- <div id="client-{{ client.id }}" hx-target="this"> -->
+<div id="client-{{ client.id }}">
+  <form hx-put="/dashboard/clients/{{ client.id }}" hx-target="#client-{{ client.id }}">
+    <div class="row">
+      <div class="eight columns">
+        {{ client_form.name }}
+        · {{ client_form.domain }}
+        · {{ client_form.email }}
+      </div>
+      <div class="four columns">
+        {{ client_form.submit(class_="button button-primary", value="Update") }}
+        <button class="button button-primary" x-get="/dashboard/clients/{{ client.id }}" hx-target="#client-{{ client.id }}">
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>

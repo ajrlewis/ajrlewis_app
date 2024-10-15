@@ -7,12 +7,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Language" content="en-us"/>
    
-    <meta http-equiv="refresh" content="60"/>
+    <!-- <meta http-equiv="refresh" content="600"/> -->
 
     <title>A.J.R.Lewis | Dashboard</title>
     <link rel="shortcut icon" href="/static/img/favicon.ico">
     <link rel="stylesheet" href="/static/css/vendor/Skeleton-2.0.4/css/normalize.css">
     <link rel="stylesheet" href="/static/css/vendor/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/colors.css">
 
 <style type="text/css">
@@ -25,6 +26,25 @@ body {
 }
 .container {
 }
+
+  /* htmx */
+
+  .htmx-indicator {
+    opacity: 0;
+    transform: opacity 500ms ease-in;
+  }
+
+  .htmx-request .htmx-indicator {
+    opacity: 1;
+  }
+  .htmx-request.htmx-indicator {
+    opacity: 1;
+  }
+
+  .client.htmx-swapping {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
 
   /* Skeleton overrides */
 
@@ -82,6 +102,29 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     color: #FFF;
     background-color: #d11a2a;
     border-color: #d11a2a; }
+
+  .button.button-edit,
+  button.button-edit,
+  input[type="submit"].button-edit,
+  input[type="reset"].button-edit,
+  input[type="button"].button-edit {
+    color: #FFF;
+    background-color: #36CC2E;
+    border-color: #36CC2E; }
+  .button.button-edit:hover,
+  button.button-edit:hover,
+  input[type="submit"].button-edit:hover,
+  input[type="reset"].button-edit:hover,
+  input[type="button"].button-edit:hover,
+  .button.button-edit:focus,
+  button.button-edit:focus,
+  input[type="submit"].button-edit:focus,
+  input[type="reset"].button-edit:focus,
+  input[type="button"].button-edit:focus {
+    color: #FFF;
+    background-color: #74ca7c;
+    border-color: #74ca7c; }
+
 </style>
 
   </head>
